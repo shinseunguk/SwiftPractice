@@ -12,6 +12,7 @@ import SnapKit
 final class ViewController: UIViewController, ViewAttribute {
     
     var indexArray : [String] = []
+    var indexString: String?
     
     lazy var indexTableView = UITableView().then {
         $0.delegate = self
@@ -31,7 +32,7 @@ final class ViewController: UIViewController, ViewAttribute {
     
     func setArray() {
         _ = [
-        "123",
+        "ScrollView로 NavigationBar hide on/off",
         "456"
         ].map {
             indexArray.append($0)
@@ -39,6 +40,7 @@ final class ViewController: UIViewController, ViewAttribute {
     }
 
     func setUI() {
+        self.view.backgroundColor = .white
         self.view.addSubview(indexTableView)
     }
     
@@ -66,6 +68,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        traceLog(indexPath.row)
+        
+        switch indexPath.row {
+        case 0:
+            let VC = View0Cotnroller()
+            VC.navTitle = indexArray[indexPath.row]
+            self.navigationController?.pushViewController(VC, animated: true)
+        default:
+            break
+        }
+        
+        
+        
     }
 }

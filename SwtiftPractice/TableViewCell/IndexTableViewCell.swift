@@ -19,7 +19,6 @@ class IndexTableViewCell: UITableViewCell, ViewAttribute {
         setUI()
         setAttributes()
         bindRx()
-
     }
     
     required init?(coder: NSCoder) {

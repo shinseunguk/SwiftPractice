@@ -5,7 +5,7 @@
 //  Created by ukBook on 2023/05/12.
 //
 
-internal func traceLog(_ description: Any,
+internal func log(_ description: Any,
            fileName: String = #file,
            lineNumber: Int = #line,
            functionName: String = #function) {
