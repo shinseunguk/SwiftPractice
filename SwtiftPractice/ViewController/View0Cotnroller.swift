@@ -19,7 +19,7 @@ class View0Cotnroller: UIViewController, ViewAttribute {
     
     lazy var scrollView = UIScrollView().then {
         $0.layer.borderWidth = 1
-        $0.isScrollEnabled = trueç
+        $0.isScrollEnabled = true
     }
     
     override func viewDidLoad() {
