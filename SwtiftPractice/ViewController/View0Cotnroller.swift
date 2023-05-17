@@ -18,8 +18,14 @@ class View0Cotnroller: UIViewController, ViewAttribute {
     }
     
     lazy var scrollView = UIScrollView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.borderWidth = 1
         $0.isScrollEnabled = true
+    }
+    
+    lazy var contentView = UIView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .blue
     }
     
     override func viewDidLoad() {
@@ -31,10 +37,7 @@ class View0Cotnroller: UIViewController, ViewAttribute {
     }
     
     func setNavigtaionBar() {
-        guard let title = navTitle else {
-            log("no navTitle")
-            return
-        }
+        guard let title = navTitle else { log("no navTitle"); return }
         self.navigationItem.title = title
     }
     
@@ -43,13 +46,21 @@ class View0Cotnroller: UIViewController, ViewAttribute {
         
         self.view.backgroundColor = .white
         self.view.addSubview(scrollView)
-        scrollView.addSubview(testLabel)
+        
+        scrollView.addSubview(contentView)
+        contentView.addSubview(testLabel)
     }
     
     func setAttributes() {
         scrollView.snp.makeConstraints {
             $0.left.right.top.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
+        
+        contentView.snp.makeConstraints {
+            $0.top.left.right.bottom.equalTo(scrollView)
+            $0.width.equalTo(scrollView.snp.width)
+        }
+        
         testLabel.snp.makeConstraints {
             $0.top.left.equalTo(30)
         }
