@@ -11,6 +11,7 @@ import UIKit
 class View0Cotnroller: UIViewController, ViewAttribute {
     
     var navTitle: String?
+    var lastContentOffsetY: CGFloat = 0.0
     
     lazy var testLabel = UILabel().then {
         $0.text = "123"
@@ -21,11 +22,12 @@ class View0Cotnroller: UIViewController, ViewAttribute {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.borderWidth = 1
         $0.isScrollEnabled = true
+        $0.delegate = self
     }
     
     lazy var contentView = UIView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .blue
+        $0.backgroundColor = .systemBlue
     }
     
     override func viewDidLoad() {
@@ -53,20 +55,46 @@ class View0Cotnroller: UIViewController, ViewAttribute {
     
     func setAttributes() {
         scrollView.snp.makeConstraints {
-            $0.left.right.top.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            $0.edges.equalToSuperview()
         }
         
         contentView.snp.makeConstraints {
-            $0.top.left.right.bottom.equalTo(scrollView)
-            $0.width.equalTo(scrollView.snp.width)
+            $0.top.bottom.width.equalToSuperview()
+            $0.height.equalTo(2000)
         }
         
         testLabel.snp.makeConstraints {
-            $0.top.left.equalTo(30)
+            $0.top.left.equalToSuperview().offset(30)
         }
+        
+        scrollView.contentSize = contentView.bounds.size
     }
     
     func bindRx() {
         
     }
+}
+
+extension View0Cotnroller: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > lastContentOffsetY {
+            // Scroll down, hide the navigation bar
+            if navigationController?.isNavigationBarHidden == false {
+                UIView.animate(withDuration: 0.3) {
+                    self.navigationController?.setNavigationBarHidden(true, animated: true)
+                }
+            }
+        } else if scrollView.contentOffset.y < lastContentOffsetY {
+            // Scroll up, show the navigation bar
+            if navigationController?.isNavigationBarHidden == true {
+                UIView.animate(withDuration: 0.3) {
+                    self.navigationController?.setNavigationBarHidden(false, animated: true)
+                }
+            }
+        }
+
+        lastContentOffsetY = scrollView.contentOffset.y
+    }
+    
 }
