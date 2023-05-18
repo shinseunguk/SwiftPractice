@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  SwtiftPractice
+//  SwiftPractice
 //
 //  Created by ukBook on 2023/05/12.
 //

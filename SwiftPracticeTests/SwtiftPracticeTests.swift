@@ -1,14 +1,14 @@
 //
-//  SwtiftPracticeTests.swift
-//  SwtiftPracticeTests
+//  SwiftPracticeTests.swift
+//  SwiftPracticeTests
 //
 //  Created by ukBook on 2023/05/12.
 //
 
 import XCTest
-@testable import SwtiftPractice
+@testable import SwiftPractice
 
-final class SwtiftPracticeTests: XCTestCase {
+final class SwiftPracticeTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
