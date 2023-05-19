@@ -10,3 +10,10 @@ protocol ViewAttribute {
     func setAttributes()
     func bindRx()
 }
+
+protocol UIViewControllerAttribute {
+    func setNavigationBar()
+    func setUI()
+    func setAttributes()
+    func bindRx()
+}

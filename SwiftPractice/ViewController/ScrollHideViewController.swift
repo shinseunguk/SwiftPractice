@@ -1,5 +1,5 @@
 //
-//  View0Cotnroller.swift
+//  ScrollHideViewController.swift
 //  SwiftPractice
 //
 //  Created by ukBook on 2023/05/17.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class View0Cotnroller: UIViewController, ViewAttribute {
+final class ScrollHideViewController: UIViewController, UIViewControllerAttribute {
     
     var navTitle: String?
     var lastContentOffset: CGFloat = 0.0
@@ -21,12 +21,11 @@ class View0Cotnroller: UIViewController, ViewAttribute {
         $0.text = "\(title)"
         $0.sizeToFit()
         $0.textAlignment = .center
-        $0.textColor = .white
+        $0.textColor = .black
     }
     
     lazy var scrollView = UIScrollView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.layer.borderWidth = 1
         $0.isScrollEnabled = true
         $0.delegate = self
     }
@@ -39,18 +38,16 @@ class View0Cotnroller: UIViewController, ViewAttribute {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavigtaionBar()
+        setNavigationBar()
         setUI()
         setAttributes()
     }
     
     
     /// 네비게이션 바 init
-    func setNavigtaionBar() {
-        guard let title = navTitle else { log("no navTitle"); return }
-        self.navigationItem.title = title
+    func setNavigationBar() {
+        self.navigationItem.title = navTitle ?? ""
     }
-    
     
     /// UI Set
     func setUI() {
@@ -62,7 +59,6 @@ class View0Cotnroller: UIViewController, ViewAttribute {
         scrollView.addSubview(contentView)
         contentView.addSubview(testLabel)
     }
-    
     
     /// Attribute Set
     func setAttributes() {
@@ -91,7 +87,7 @@ class View0Cotnroller: UIViewController, ViewAttribute {
     }
 }
 
-extension View0Cotnroller: UIScrollViewDelegate {
+extension ScrollHideViewController: UIScrollViewDelegate {
     
     /// 스크롤 뷰 올리고 내리는거에 따라 scrollView Hide ON/OFF
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -1,5 +1,5 @@
 //
-//  IndexTableViewCell.swift
+//  TitleTableViewCell.swift
 //  SwiftPractice
 //
 //  Created by ukBook on 2023/05/12.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IndexTableViewCell: UITableViewCell, ViewAttribute {
+class TitleTableViewCell: UITableViewCell, ViewAttribute {
     
     lazy var title = UILabel().then {
         $0.sizeToFit()

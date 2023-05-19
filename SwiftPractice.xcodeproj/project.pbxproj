@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4ADEDEDDAD181064A2FFAA0B /* Pods_SwiftPracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967C289E16C899ED01F5A41D /* Pods_SwiftPracticeTests.framework */; };
-		A242E05C2A0E4DC90010BED8 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E05B2A0E4DC90010BED8 /* IndexTableViewCell.swift */; };
-		A242E05D2A0E4DC90010BED8 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E05B2A0E4DC90010BED8 /* IndexTableViewCell.swift */; };
-		A242E05E2A0E4DC90010BED8 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E05B2A0E4DC90010BED8 /* IndexTableViewCell.swift */; };
-		A242E0642A150A420010BED8 /* View0Cotnroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E0632A150A420010BED8 /* View0Cotnroller.swift */; };
-		A242E0652A150A420010BED8 /* View0Cotnroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E0632A150A420010BED8 /* View0Cotnroller.swift */; };
-		A242E0662A150A420010BED8 /* View0Cotnroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E0632A150A420010BED8 /* View0Cotnroller.swift */; };
+		A242E05C2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E05B2A0E4DC90010BED8 /* TitleTableViewCell.swift */; };
+		A242E05D2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E05B2A0E4DC90010BED8 /* TitleTableViewCell.swift */; };
+		A242E05E2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E05B2A0E4DC90010BED8 /* TitleTableViewCell.swift */; };
+		A242E0642A150A420010BED8 /* ScrollHideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E0632A150A420010BED8 /* ScrollHideViewController.swift */; };
+		A242E0652A150A420010BED8 /* ScrollHideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E0632A150A420010BED8 /* ScrollHideViewController.swift */; };
+		A242E0662A150A420010BED8 /* ScrollHideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E0632A150A420010BED8 /* ScrollHideViewController.swift */; };
 		A242E0692A164D1D0010BED8 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E0682A164D1D0010BED8 /* Extension+UIView.swift */; };
 		A2C42BC22A0E4125008A5865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BC12A0E4125008A5865 /* AppDelegate.swift */; };
 		A2C42BC42A0E4125008A5865 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BC32A0E4125008A5865 /* SceneDelegate.swift */; };
-		A2C42BC62A0E4125008A5865 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BC52A0E4125008A5865 /* ViewController.swift */; };
+		A2C42BC62A0E4125008A5865 /* IndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BC52A0E4125008A5865 /* IndexController.swift */; };
 		A2C42BCB2A0E4126008A5865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2C42BCA2A0E4126008A5865 /* Assets.xcassets */; };
 		A2C42BCE2A0E4126008A5865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C42BCC2A0E4126008A5865 /* LaunchScreen.storyboard */; };
 		A2C42BD92A0E4126008A5865 /* SwtiftPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BD82A0E4126008A5865 /* SwtiftPracticeTests.swift */; };
@@ -29,6 +29,12 @@
 		A2C42BF92A0E419A008A5865 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BF82A0E419A008A5865 /* Protocol.swift */; };
 		A2C42BFA2A0E419A008A5865 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BF82A0E419A008A5865 /* Protocol.swift */; };
 		A2C42BFB2A0E419A008A5865 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BF82A0E419A008A5865 /* Protocol.swift */; };
+		AC3516772A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */; };
+		AC3516782A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */; };
+		AC3516792A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */; };
+		AC35167B2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */; };
+		AC35167C2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */; };
+		AC35167D2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */; };
 		CE9B83F1CCD1C4D80EEADACC /* Pods_SwiftPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A2FC61FF5802D7F942E549 /* Pods_SwiftPractice.framework */; };
 		F2E3B58E25E0A371F3EEEAF4 /* Pods_SwiftPractice_SwiftPracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8941877ED61A2DCA96CF05B /* Pods_SwiftPractice_SwiftPracticeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -60,13 +66,13 @@
 		90D0026A4305C5B3B8440A5C /* Pods-SwtiftPractice-SwtiftPracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwtiftPractice-SwtiftPracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-SwtiftPractice-SwtiftPracticeUITests/Pods-SwtiftPractice-SwtiftPracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		933053AE5DFB0F55A1AC9507 /* Pods-SwtiftPractice-SwtiftPracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwtiftPractice-SwtiftPracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwtiftPractice-SwtiftPracticeUITests/Pods-SwtiftPractice-SwtiftPracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		967C289E16C899ED01F5A41D /* Pods_SwiftPracticeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPracticeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A242E05B2A0E4DC90010BED8 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTableViewCell.swift; sourceTree = "<group>"; };
-		A242E0632A150A420010BED8 /* View0Cotnroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View0Cotnroller.swift; sourceTree = "<group>"; };
+		A242E05B2A0E4DC90010BED8 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		A242E0632A150A420010BED8 /* ScrollHideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollHideViewController.swift; sourceTree = "<group>"; };
 		A242E0682A164D1D0010BED8 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		A2C42BBE2A0E4125008A5865 /* SwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C42BC12A0E4125008A5865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2C42BC32A0E4125008A5865 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2C42BC52A0E4125008A5865 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2C42BC52A0E4125008A5865 /* IndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexController.swift; sourceTree = "<group>"; };
 		A2C42BCA2A0E4126008A5865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2C42BCD2A0E4126008A5865 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2C42BCF2A0E4126008A5865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 		A2C42BE42A0E4126008A5865 /* SwtiftPracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwtiftPracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A2C42BF32A0E417E008A5865 /* LogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
 		A2C42BF82A0E419A008A5865 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
+		AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDeleteCellViewController.swift; sourceTree = "<group>"; };
 		B360F4BEA1C50EFC55D049B3 /* Pods-SwtiftPracticeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwtiftPracticeTests.release.xcconfig"; path = "Target Support Files/Pods-SwtiftPracticeTests/Pods-SwtiftPracticeTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8941877ED61A2DCA96CF05B /* Pods_SwiftPractice_SwiftPracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPractice_SwiftPracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F2300E6B20396C61696271 /* Pods-SwiftPracticeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPracticeTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftPracticeTests/Pods-SwiftPracticeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +134,7 @@
 		A242E05A2A0E4D980010BED8 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A242E05B2A0E4DC90010BED8 /* IndexTableViewCell.swift */,
+				A242E05B2A0E4DC90010BED8 /* TitleTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -143,8 +151,9 @@
 		A242E0602A15096E0010BED8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A2C42BC52A0E4125008A5865 /* ViewController.swift */,
-				A242E0632A150A420010BED8 /* View0Cotnroller.swift */,
+				A2C42BC52A0E4125008A5865 /* IndexController.swift */,
+				A242E0632A150A420010BED8 /* ScrollHideViewController.swift */,
+				AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 		A2C42BF12A0E415C008A5865 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AC3516752A17429F00CBD8C8 /* CustomView */,
 				A2C42BF22A0E4162008A5865 /* Log */,
 			);
 			path = Helper;
@@ -250,6 +260,14 @@
 				A2C42BF82A0E419A008A5865 /* Protocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		AC3516752A17429F00CBD8C8 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		ED1306D823968CC1DA11EA83 /* Pods */ = {
@@ -510,11 +528,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C42BF42A0E417E008A5865 /* LogHelper.swift in Sources */,
-				A2C42BC62A0E4125008A5865 /* ViewController.swift in Sources */,
+				A2C42BC62A0E4125008A5865 /* IndexController.swift in Sources */,
 				A242E0692A164D1D0010BED8 /* Extension+UIView.swift in Sources */,
-				A242E05C2A0E4DC90010BED8 /* IndexTableViewCell.swift in Sources */,
+				A242E05C2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				A2C42BC22A0E4125008A5865 /* AppDelegate.swift in Sources */,
-				A242E0642A150A420010BED8 /* View0Cotnroller.swift in Sources */,
+				AC35167B2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
+				A242E0642A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
+				AC3516772A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
 				A2C42BC42A0E4125008A5865 /* SceneDelegate.swift in Sources */,
 				A2C42BF92A0E419A008A5865 /* Protocol.swift in Sources */,
 			);
@@ -524,10 +544,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC35167C2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
+				AC3516782A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
 				A2C42BF52A0E417E008A5865 /* LogHelper.swift in Sources */,
 				A2C42BD92A0E4126008A5865 /* SwtiftPracticeTests.swift in Sources */,
-				A242E05D2A0E4DC90010BED8 /* IndexTableViewCell.swift in Sources */,
-				A242E0652A150A420010BED8 /* View0Cotnroller.swift in Sources */,
+				A242E05D2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
+				A242E0652A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
 				A2C42BFA2A0E419A008A5865 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,9 +558,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A242E0662A150A420010BED8 /* View0Cotnroller.swift in Sources */,
+				A242E0662A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
+				AC35167D2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
 				A2C42BE52A0E4126008A5865 /* SwtiftPracticeUITestsLaunchTests.swift in Sources */,
-				A242E05E2A0E4DC90010BED8 /* IndexTableViewCell.swift in Sources */,
+				AC3516792A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
+				A242E05E2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				A2C42BF62A0E417E008A5865 /* LogHelper.swift in Sources */,
 				A2C42BE32A0E4126008A5865 /* SwtiftPracticeUITests.swift in Sources */,
 				A2C42BFB2A0E419A008A5865 /* Protocol.swift in Sources */,
