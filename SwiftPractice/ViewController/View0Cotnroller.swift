@@ -39,14 +39,14 @@ class View0Cotnroller: UIViewController, ViewAttribute {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigtaionBarInit()
+        setNavigtaionBar()
         setUI()
         setAttributes()
     }
     
     
     /// 네비게이션 바 init
-    func navigtaionBarInit() {
+    func setNavigtaionBar() {
         guard let title = navTitle else { log("no navTitle"); return }
         self.navigationItem.title = title
     }
@@ -93,6 +93,7 @@ class View0Cotnroller: UIViewController, ViewAttribute {
 
 extension View0Cotnroller: UIScrollViewDelegate {
     
+    /// 스크롤 뷰 올리고 내리는거에 따라 scrollView Hide ON/OFF
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         

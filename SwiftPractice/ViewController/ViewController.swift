@@ -23,16 +23,22 @@ final class ViewController: UIViewController, ViewAttribute {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setNavigtaionBar()
         setArray()
         setUI()
         setAttributes()
-        bindRx()
     }
     
+    /// 네비게이션바 Set
+    func setNavigtaionBar() {
+        self.navigationItem.title = "SwiftPractice"
+    }
+    
+    /// indexArray append하는 함수
     func setArray() {
         _ = [
-        "NavigationBar hide on/off",
+        "scrollViewDidScroll NaviBar hide on/off",
         "456"
         ].map {
             indexArray.append($0)
