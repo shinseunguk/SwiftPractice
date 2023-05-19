@@ -198,11 +198,11 @@
 		A2C42BC02A0E4125008A5865 /* SwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
-				A242E0672A164D120010BED8 /* Extension */,
 				A2C42BCF2A0E4126008A5865 /* Info.plist */,
 				A242E05F2A1509620010BED8 /* AppDelegate */,
 				A242E05A2A0E4D980010BED8 /* TableViewCell */,
 				A2C42BF72A0E4194008A5865 /* Protocol */,
+				A242E0672A164D120010BED8 /* Extension */,
 				A2C42BF12A0E415C008A5865 /* Helper */,
 				A242E0602A15096E0010BED8 /* ViewController */,
 				A242E0612A15097C0010BED8 /* Resources */,

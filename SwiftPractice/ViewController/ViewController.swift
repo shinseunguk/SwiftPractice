@@ -32,7 +32,7 @@ final class ViewController: UIViewController, ViewAttribute {
     
     func setArray() {
         _ = [
-        "ScrollView로 NavigationBar hide on/off",
+        "NavigationBar hide on/off",
         "456"
         ].map {
             indexArray.append($0)

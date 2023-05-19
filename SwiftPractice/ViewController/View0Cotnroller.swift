@@ -11,11 +11,17 @@ import UIKit
 class View0Cotnroller: UIViewController, ViewAttribute {
     
     var navTitle: String?
-    var lastContentOffsetY: CGFloat = 0.0
+    var lastContentOffset: CGFloat = 0.0
     
     lazy var testLabel = UILabel().then {
-        $0.text = "123"
+        
+        guard let title = navTitle else {
+            return
+        }
+        $0.text = "\(title)"
         $0.sizeToFit()
+        $0.textAlignment = .center
+        $0.textColor = .white
     }
     
     lazy var scrollView = UIScrollView().then {
@@ -31,18 +37,22 @@ class View0Cotnroller: UIViewController, ViewAttribute {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
-        setNavigtaionBar()
+        navigtaionBarInit()
         setUI()
         setAttributes()
-        bindRx()
     }
     
-    func setNavigtaionBar() {
+    
+    /// 네비게이션 바 init
+    func navigtaionBarInit() {
         guard let title = navTitle else { log("no navTitle"); return }
         self.navigationItem.title = title
     }
     
+    
+    /// UI Set
     func setUI() {
         self.navigationController?.navigationBar.isHidden = false
         
@@ -53,6 +63,8 @@ class View0Cotnroller: UIViewController, ViewAttribute {
         contentView.addSubview(testLabel)
     }
     
+    
+    /// Attribute Set
     func setAttributes() {
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -64,12 +76,16 @@ class View0Cotnroller: UIViewController, ViewAttribute {
         }
         
         testLabel.snp.makeConstraints {
-            $0.top.left.equalToSuperview().offset(30)
+            $0.left.equalTo(20)
+            $0.right.equalTo(-20)
+            $0.top.equalTo(550)
         }
         
         scrollView.contentSize = contentView.bounds.size
     }
     
+    
+    /// RxSwift (미사용)
     func bindRx() {
         
     }
@@ -78,23 +94,20 @@ class View0Cotnroller: UIViewController, ViewAttribute {
 extension View0Cotnroller: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y > lastContentOffsetY {
-            // Scroll down, hide the navigation bar
-            if navigationController?.isNavigationBarHidden == false {
-                UIView.animate(withDuration: 0.3) {
-                    self.navigationController?.setNavigationBarHidden(true, animated: true)
-                }
+        let offsetY = scrollView.contentOffset.y
+        
+        if offsetY > lastContentOffset && offsetY > 0 { // 스크롤을 아래로 내리는 중이고, offsetY가 0보다 클 때
+            UIView.animate(withDuration: 0.3) {
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
             }
-        } else if scrollView.contentOffset.y < lastContentOffsetY {
-            // Scroll up, show the navigation bar
-            if navigationController?.isNavigationBarHidden == true {
-                UIView.animate(withDuration: 0.3) {
-                    self.navigationController?.setNavigationBarHidden(false, animated: true)
-                }
+            
+        } else if offsetY < lastContentOffset { // 스크롤을 위로 올리는 중
+            UIView.animate(withDuration: 0.3) {
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
             }
         }
-
-        lastContentOffsetY = scrollView.contentOffset.y
+        
+        lastContentOffset = offsetY
     }
     
 }
