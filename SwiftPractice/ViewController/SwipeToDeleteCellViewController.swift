@@ -15,17 +15,6 @@ class SwipeToDeleteCellViewController: UIViewController, UIViewControllerAttribu
     var lastContentOffset: CGFloat = 0.0
     var tableViewArray: [Int] = []
     
-    lazy var testLabel = UILabel().then {
-        
-        guard let title = navTitle else {
-            return
-        }
-        $0.text = "\(title)"
-        $0.sizeToFit()
-        $0.textAlignment = .center
-        $0.textColor = .black
-    }
-    
     lazy var tableView = UITableView().then {
         $0.delegate = self
         $0.dataSource = self
@@ -39,7 +28,7 @@ class SwipeToDeleteCellViewController: UIViewController, UIViewControllerAttribu
         setNavigationBar()
         setUI()
         setAttributes()
-        bindRx()
+        bindRx() // 미사용 함수
     }
     
     func setTableViewArray() {
@@ -63,6 +52,7 @@ class SwipeToDeleteCellViewController: UIViewController, UIViewControllerAttribu
         }
     }
     
+    /// 미사용 함수
     func bindRx() {
         
     }
@@ -83,13 +73,13 @@ extension SwipeToDeleteCellViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // 선택한 셀 삭제
-            tableView.beginUpdates()
-            // 데이터 소스에서 해당 셀의 데이터 삭제
+            tableView.beginUpdates() // beginUpdate
+            
             tableView.deleteRows(at: [indexPath], with: .fade) // 셀 삭제 애니메이션 설정
             
-            tableViewArray.remove(at: indexPath.row)
+            tableViewArray.remove(at: indexPath.row) // 데이터 소스에서 해당 셀의 데이터 삭제
             
-            tableView.endUpdates()
+            tableView.endUpdates() // endUpdate
         }
     }
 }
