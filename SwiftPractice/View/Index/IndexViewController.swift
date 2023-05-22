@@ -1,5 +1,5 @@
 //
-//  IndexController.swift
+//  IndexViewController.swift
 //  SwiftPractice
 //
 //  Created by ukBook on 2023/05/12.
@@ -9,7 +9,7 @@ import UIKit
 import Then
 import SnapKit
 
-final class IndexController: UIViewController, UIViewControllerAttribute {
+final class IndexViewController: UIViewController, UIViewControllerAttribute {
     
 //    var tableView0Array : [String] = []
 //    var tableView1Array : [String] = []
@@ -18,13 +18,22 @@ final class IndexController: UIViewController, UIViewControllerAttribute {
     // 섹션 제목 배열
     let sectionTitles = [
         "UIScrollView",
-        "UITableView"
+        "UITableView",
+        "Signing & Capabilities"
     ]
     
     // 각 섹션의 데이터 배열
     let sectionData = [
-        ["scrollViewDidScroll NaviBar hide on/off"],
-        ["tableView cell 밀어서 삭제"]
+        [
+            "ScrollViewDidScroll NaviBar hide on/off"
+        ], // UIScrollView
+        [
+            "TableView cell 밀어서 삭제"
+        ], // UITableView
+        [
+            "Sign In with Apple",
+            "Hotspot Configuration"
+        ] // Signing & Capabilities
     ]
     
     lazy var tableView = UITableView().then {
@@ -68,7 +77,7 @@ final class IndexController: UIViewController, UIViewControllerAttribute {
     }
 }
 
-extension IndexController: UITableViewDataSource, UITableViewDelegate {
+extension IndexViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitles.count
@@ -95,10 +104,10 @@ extension IndexController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true) // 선택 해제
         
         switch indexPath.section {
-        case 0:
+        case 0: // UIScrollView
             
             switch indexPath.row {
-            case 0:
+            case 0: // scrollViewDidScroll NaviBar hide on/off
                 let VC = ScrollHideViewController()
                 VC.navTitle = sectionData[indexPath.section][indexPath.row]
 
@@ -107,11 +116,28 @@ extension IndexController: UITableViewDataSource, UITableViewDelegate {
                 break
             }
         
-        case 1:
+        case 1: // UITableView
             
             switch indexPath.row {
-            case 0:
+            case 0: // tableView Cell 밀어서 삭제
                 let VC = SwipeToDeleteCellViewController()
+                VC.navTitle = sectionData[indexPath.section][indexPath.row]
+
+                self.navigationController?.pushViewController(VC, animated: true)
+            default:
+                break
+            }
+        
+        case 2 : // Signing & Capabilities
+            
+            switch indexPath.row {
+            case 0: // Sign In With Apple
+                let VC = AppleLoginViewController()
+                VC.navTitle = sectionData[indexPath.section][indexPath.row]
+
+                self.navigationController?.pushViewController(VC, animated: true)
+            case 1: // Hotspot Configuration
+                let VC = HotspotConfigurationViewController()
                 VC.navTitle = sectionData[indexPath.section][indexPath.row]
 
                 self.navigationController?.pushViewController(VC, animated: true)

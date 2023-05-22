@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class SwipeToDeleteCellViewController: UIViewController, UIViewControllerAttribute {
+final class SwipeToDeleteCellViewController: UIViewController, UIViewControllerAttribute {
     
     var navTitle: String?
     var lastContentOffset: CGFloat = 0.0

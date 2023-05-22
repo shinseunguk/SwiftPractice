@@ -17,7 +17,7 @@
 		A242E0692A164D1D0010BED8 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E0682A164D1D0010BED8 /* Extension+UIView.swift */; };
 		A2C42BC22A0E4125008A5865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BC12A0E4125008A5865 /* AppDelegate.swift */; };
 		A2C42BC42A0E4125008A5865 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BC32A0E4125008A5865 /* SceneDelegate.swift */; };
-		A2C42BC62A0E4125008A5865 /* IndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BC52A0E4125008A5865 /* IndexController.swift */; };
+		A2C42BC62A0E4125008A5865 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BC52A0E4125008A5865 /* IndexViewController.swift */; };
 		A2C42BCB2A0E4126008A5865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2C42BCA2A0E4126008A5865 /* Assets.xcassets */; };
 		A2C42BCE2A0E4126008A5865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C42BCC2A0E4126008A5865 /* LaunchScreen.storyboard */; };
 		A2C42BD92A0E4126008A5865 /* SwtiftPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C42BD82A0E4126008A5865 /* SwtiftPracticeTests.swift */; };
@@ -35,6 +35,24 @@
 		AC35167B2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */; };
 		AC35167C2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */; };
 		AC35167D2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */; };
+		ACBB158E2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */; };
+		ACBB158F2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */; };
+		ACBB15902A1B0826004B71CF /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */; };
+		ACBB15922A1B1B52004B71CF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15912A1B1B52004B71CF /* ExampleViewController.swift */; };
+		ACBB15932A1B1B52004B71CF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15912A1B1B52004B71CF /* ExampleViewController.swift */; };
+		ACBB15942A1B1B52004B71CF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15912A1B1B52004B71CF /* ExampleViewController.swift */; };
+		ACBB159C2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB159B2A1B1F74004B71CF /* AppleLoginViewModel.swift */; };
+		ACBB159D2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB159B2A1B1F74004B71CF /* AppleLoginViewModel.swift */; };
+		ACBB159E2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB159B2A1B1F74004B71CF /* AppleLoginViewModel.swift */; };
+		ACBB15A32A1B38E4004B71CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15A22A1B38E4004B71CF /* User.swift */; };
+		ACBB15A42A1B38E4004B71CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15A22A1B38E4004B71CF /* User.swift */; };
+		ACBB15A52A1B38E4004B71CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15A22A1B38E4004B71CF /* User.swift */; };
+		ACBB15A72A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15A62A1B4D5B004B71CF /* HotspotConfigurationViewController.swift */; };
+		ACBB15A82A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15A62A1B4D5B004B71CF /* HotspotConfigurationViewController.swift */; };
+		ACBB15A92A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15A62A1B4D5B004B71CF /* HotspotConfigurationViewController.swift */; };
+		ACBB15AB2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */; };
+		ACBB15AC2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */; };
+		ACBB15AD2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */; };
 		CE9B83F1CCD1C4D80EEADACC /* Pods_SwiftPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A2FC61FF5802D7F942E549 /* Pods_SwiftPractice.framework */; };
 		F2E3B58E25E0A371F3EEEAF4 /* Pods_SwiftPractice_SwiftPracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8941877ED61A2DCA96CF05B /* Pods_SwiftPractice_SwiftPracticeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -72,7 +90,7 @@
 		A2C42BBE2A0E4125008A5865 /* SwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C42BC12A0E4125008A5865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2C42BC32A0E4125008A5865 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2C42BC52A0E4125008A5865 /* IndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexController.swift; sourceTree = "<group>"; };
+		A2C42BC52A0E4125008A5865 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		A2C42BCA2A0E4126008A5865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2C42BCD2A0E4126008A5865 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2C42BCF2A0E4126008A5865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +103,13 @@
 		A2C42BF82A0E419A008A5865 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
 		AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDeleteCellViewController.swift; sourceTree = "<group>"; };
+		ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginViewController.swift; sourceTree = "<group>"; };
+		ACBB15912A1B1B52004B71CF /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		ACBB15952A1B1BD8004B71CF /* SwiftPractice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftPractice.entitlements; sourceTree = "<group>"; };
+		ACBB159B2A1B1F74004B71CF /* AppleLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginViewModel.swift; sourceTree = "<group>"; };
+		ACBB15A22A1B38E4004B71CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ACBB15A62A1B4D5B004B71CF /* HotspotConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotConfigurationViewController.swift; sourceTree = "<group>"; };
+		ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotConfigurationViewModel.swift; sourceTree = "<group>"; };
 		B360F4BEA1C50EFC55D049B3 /* Pods-SwtiftPracticeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwtiftPracticeTests.release.xcconfig"; path = "Target Support Files/Pods-SwtiftPracticeTests/Pods-SwtiftPracticeTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8941877ED61A2DCA96CF05B /* Pods_SwiftPractice_SwiftPracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPractice_SwiftPracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F2300E6B20396C61696271 /* Pods-SwiftPracticeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPracticeTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftPracticeTests/Pods-SwiftPracticeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,14 +173,16 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		A242E0602A15096E0010BED8 /* ViewController */ = {
+		A242E0602A15096E0010BED8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A2C42BC52A0E4125008A5865 /* IndexController.swift */,
-				A242E0632A150A420010BED8 /* ScrollHideViewController.swift */,
-				AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */,
+				ACBB15912A1B1B52004B71CF /* ExampleViewController.swift */,
+				ACBB15892A1AED48004B71CF /* Index */,
+				ACBB158A2A1AED52004B71CF /* UIScrollView */,
+				ACBB158B2A1AED5F004B71CF /* UITableView */,
+				ACBB158C2A1B0812004B71CF /* Signing & Capabilities */,
 			);
-			path = ViewController;
+			path = View;
 			sourceTree = "<group>";
 		};
 		A242E0612A15097C0010BED8 /* Resources */ = {
@@ -207,13 +234,16 @@
 		A2C42BC02A0E4125008A5865 /* SwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
+				ACBB15952A1B1BD8004B71CF /* SwiftPractice.entitlements */,
 				A2C42BCF2A0E4126008A5865 /* Info.plist */,
 				A242E05F2A1509620010BED8 /* AppDelegate */,
 				A242E05A2A0E4D980010BED8 /* TableViewCell */,
 				A2C42BF72A0E4194008A5865 /* Protocol */,
 				A242E0672A164D120010BED8 /* Extension */,
 				A2C42BF12A0E415C008A5865 /* Helper */,
-				A242E0602A15096E0010BED8 /* ViewController */,
+				A242E0602A15096E0010BED8 /* View */,
+				ACBB159A2A1B1F66004B71CF /* ViewModel */,
+				ACBB15A12A1B38DB004B71CF /* Model */,
 				A242E0612A15097C0010BED8 /* Resources */,
 				A242E0622A15098B0010BED8 /* StoryBoards */,
 			);
@@ -268,6 +298,64 @@
 				AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		ACBB15892A1AED48004B71CF /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				A2C42BC52A0E4125008A5865 /* IndexViewController.swift */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
+		ACBB158A2A1AED52004B71CF /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				A242E0632A150A420010BED8 /* ScrollHideViewController.swift */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		ACBB158B2A1AED5F004B71CF /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		ACBB158C2A1B0812004B71CF /* Signing & Capabilities */ = {
+			isa = PBXGroup;
+			children = (
+				ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */,
+				ACBB15A62A1B4D5B004B71CF /* HotspotConfigurationViewController.swift */,
+			);
+			path = "Signing & Capabilities";
+			sourceTree = "<group>";
+		};
+		ACBB159A2A1B1F66004B71CF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACBB15A02A1B30E9004B71CF /* Signing & Capabilities */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ACBB15A02A1B30E9004B71CF /* Signing & Capabilities */ = {
+			isa = PBXGroup;
+			children = (
+				ACBB159B2A1B1F74004B71CF /* AppleLoginViewModel.swift */,
+				ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */,
+			);
+			path = "Signing & Capabilities";
+			sourceTree = "<group>";
+		};
+		ACBB15A12A1B38DB004B71CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACBB15A22A1B38E4004B71CF /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ED1306D823968CC1DA11EA83 /* Pods */ = {
@@ -528,15 +616,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C42BF42A0E417E008A5865 /* LogHelper.swift in Sources */,
-				A2C42BC62A0E4125008A5865 /* IndexController.swift in Sources */,
+				A2C42BC62A0E4125008A5865 /* IndexViewController.swift in Sources */,
 				A242E0692A164D1D0010BED8 /* Extension+UIView.swift in Sources */,
 				A242E05C2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				A2C42BC22A0E4125008A5865 /* AppDelegate.swift in Sources */,
+				ACBB15922A1B1B52004B71CF /* ExampleViewController.swift in Sources */,
+				ACBB15A32A1B38E4004B71CF /* User.swift in Sources */,
 				AC35167B2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
 				A242E0642A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
 				AC3516772A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
+				ACBB158E2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
+				ACBB15AB2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
 				A2C42BC42A0E4125008A5865 /* SceneDelegate.swift in Sources */,
+				ACBB15A72A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				A2C42BF92A0E419A008A5865 /* Protocol.swift in Sources */,
+				ACBB159C2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,10 +641,16 @@
 				AC35167C2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
 				AC3516782A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
 				A2C42BF52A0E417E008A5865 /* LogHelper.swift in Sources */,
+				ACBB15A82A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				A2C42BD92A0E4126008A5865 /* SwtiftPracticeTests.swift in Sources */,
 				A242E05D2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
+				ACBB15AC2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
 				A242E0652A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
+				ACBB158F2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
 				A2C42BFA2A0E419A008A5865 /* Protocol.swift in Sources */,
+				ACBB15932A1B1B52004B71CF /* ExampleViewController.swift in Sources */,
+				ACBB159D2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
+				ACBB15A42A1B38E4004B71CF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,14 +658,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBB15A92A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				A242E0662A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
+				ACBB15902A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
+				ACBB15AD2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
 				AC35167D2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
 				A2C42BE52A0E4126008A5865 /* SwtiftPracticeUITestsLaunchTests.swift in Sources */,
+				ACBB159E2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 				AC3516792A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
 				A242E05E2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				A2C42BF62A0E417E008A5865 /* LogHelper.swift in Sources */,
+				ACBB15A52A1B38E4004B71CF /* User.swift in Sources */,
 				A2C42BE32A0E4126008A5865 /* SwtiftPracticeUITests.swift in Sources */,
 				A2C42BFB2A0E419A008A5865 /* Protocol.swift in Sources */,
+				ACBB15942A1B1B52004B71CF /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +822,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftPractice/SwiftPractice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2D8WKJP7C4;
@@ -726,6 +833,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -745,6 +853,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftPractice/SwiftPractice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2D8WKJP7C4;
@@ -755,6 +864,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

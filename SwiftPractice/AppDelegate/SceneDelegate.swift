@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // safeArea BackgroundColor가 Black이 되는것을 방지
         window?.safeAreaLayoutGuide.owningView?.backgroundColor = .white
         
-        let VC = IndexController()
+        let VC = IndexViewController()
         
         let navigationController = UINavigationController(rootViewController: VC)
         navigationController.isNavigationBarHidden = false
