@@ -15,7 +15,7 @@ final class AppleLoginViewController: UIViewController, UIViewControllerAttribut
     
     private let disposeBag = DisposeBag()
     private var viewModel = AppleLoginViewModel()
-    private var appleUserInfo = AppleUser(userIdentifier: nil, familyName: nil, givenName: nil, email: nil, state: nil)
+    private var appleUser = AppleUser(userIdentifier: nil, familyName: nil, givenName: nil, email: nil)
     
     // Apple 로그인 버튼 생성
     lazy var appleLoginButton = UIButton(type: .system).then {
@@ -54,6 +54,7 @@ final class AppleLoginViewController: UIViewController, UIViewControllerAttribut
         self.view.addSubview(userInfoLabel)
     }
     
+    // Autolayout
     func setAttributes() {
         appleLoginButton.snp.makeConstraints {
             $0.width.equalTo(200)
@@ -71,19 +72,23 @@ final class AppleLoginViewController: UIViewController, UIViewControllerAttribut
     }
     
     func bindRx() {
-        
         // 애플 로그인 버튼 Action
         appleLoginButton.rx.tap
             .bind(to: viewModel.signInButtonTapped)
             .disposed(by: disposeBag)
         
+        // 성공시 userInfoLabel에 정보들 setText
         viewModel.signInCompleted
             .subscribe(onNext: { value in
-                self.appleUserInfo = value
-                self.userInfoLabel.text = "\(self.appleUserInfo)"
+                self.appleUser = value
+                self.userInfoLabel.text = """
+                    userIdentifier: \(self.appleUser.userIdentifier)
+                    familyName: \(self.appleUser.familyName)
+                    givenName: \(self.appleUser.givenName)
+                    email: \(self.appleUser.email)
+                """
             })
             .disposed(by: disposeBag)
-        
     }
 }
 

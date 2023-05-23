@@ -26,6 +26,7 @@ final class AppleLoginViewModel: NSObject {
             .disposed(by: disposeBag)
     }
     
+    //애플 로그인
     func performAppleSignIn() {
         let provider = ASAuthorizationAppleIDProvider()
         let request = provider.createRequest()
@@ -39,6 +40,7 @@ final class AppleLoginViewModel: NSObject {
 
 extension AppleLoginViewModel: ASAuthorizationControllerDelegate {
     
+    // 애플 로그인 성공
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             let userIdentifier = appleIDCredential.user
@@ -51,14 +53,14 @@ extension AppleLoginViewModel: ASAuthorizationControllerDelegate {
                 userIdentifier: userIdentifier,
                 familyName: familyName,
                 givenName: givenName,
-                email: email,
-                state: state
+                email: email
             )
             
             signInCompleted.accept(user)
         }
     }
     
+    // 애플 로그인 실패
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         print("Apple Sign In Error: \(error.localizedDescription)")
     }

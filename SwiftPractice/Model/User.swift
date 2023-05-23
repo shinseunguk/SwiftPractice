@@ -12,5 +12,4 @@ struct AppleUser {
     let familyName: String?
     let givenName: String?
     let email: String?
-    let state: String?
 }
