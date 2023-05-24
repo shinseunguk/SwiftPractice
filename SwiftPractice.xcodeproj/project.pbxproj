@@ -171,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				ACBB15912A1B1B52004B71CF /* ExampleViewController.swift */,
+				A242E05A2A0E4D980010BED8 /* TableViewCell */,
 				ACBB15892A1AED48004B71CF /* Index */,
 				ACBB158A2A1AED52004B71CF /* UIScrollView */,
 				ACBB158B2A1AED5F004B71CF /* UITableView */,
@@ -231,7 +232,6 @@
 				ACBB15952A1B1BD8004B71CF /* SwiftPractice.entitlements */,
 				A2C42BCF2A0E4126008A5865 /* Info.plist */,
 				A242E05F2A1509620010BED8 /* AppDelegate */,
-				A242E05A2A0E4D980010BED8 /* TableViewCell */,
 				A2C42BF72A0E4194008A5865 /* Protocol */,
 				A242E0672A164D120010BED8 /* Extension */,
 				A2C42BF12A0E415C008A5865 /* Helper */,
