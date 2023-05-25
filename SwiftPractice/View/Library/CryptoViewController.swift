@@ -128,6 +128,7 @@ final class CryptoViewController: UIViewController, UIViewControllerAttribute {
             },onCompleted: {
                 print("onCompleted")
             })
+            .disposed(by: disposeBag)
         
         cryptoTextField.rx.text
             .orEmpty
