@@ -36,8 +36,9 @@ final class IndexViewController: UIViewController, UIViewControllerAttribute {
             "Hotspot Configuration"
         ], // Signing & Capabilities
         [
-            "Atributika"
-        ]
+            "Atributika",
+            "CryptoSwift"
+        ] // Library
     ]
     
     lazy var tableView = UITableView().then {
@@ -149,15 +150,22 @@ extension IndexViewController: UITableViewDataSource, UITableViewDelegate {
                 break
             }
         case 3 : // Library
+            
             switch indexPath.row {
             case 0: // Atributika
                 let VC = AtributikaViewController()
                 VC.navTitle = sectionData[indexPath.section][indexPath.row]
 
                 self.navigationController?.pushViewController(VC, animated: true)
+            case 1: // CryptoSwift
+                let VC = CryptoViewController()
+                VC.navTitle = sectionData[indexPath.section][indexPath.row]
+
+                self.navigationController?.pushViewController(VC, animated: true)
             default:
                 break
             }
+            
         default:
             break
         }

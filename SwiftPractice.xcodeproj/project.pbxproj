@@ -38,6 +38,10 @@
 		AC58EEAF2A1EE4F3007D52E5 /* AtributikaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEAE2A1EE4F3007D52E5 /* AtributikaViewController.swift */; };
 		AC58EEB02A1EE4F3007D52E5 /* AtributikaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEAE2A1EE4F3007D52E5 /* AtributikaViewController.swift */; };
 		AC58EEB12A1EE4F3007D52E5 /* AtributikaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEAE2A1EE4F3007D52E5 /* AtributikaViewController.swift */; };
+		AC58EEB32A1EF64D007D52E5 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEB22A1EF64D007D52E5 /* CryptoViewController.swift */; };
+		AC58EEB42A1EF64D007D52E5 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEB22A1EF64D007D52E5 /* CryptoViewController.swift */; };
+		AC58EEB52A1EF64D007D52E5 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEB22A1EF64D007D52E5 /* CryptoViewController.swift */; };
+		AC58EEBC2A1F1644007D52E5 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEBB2A1F1644007D52E5 /* CryptoViewModel.swift */; };
 		ACBB158E2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */; };
 		ACBB158F2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */; };
 		ACBB15902A1B0826004B71CF /* AppleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */; };
@@ -104,6 +108,8 @@
 		AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
 		AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDeleteCellViewController.swift; sourceTree = "<group>"; };
 		AC58EEAE2A1EE4F3007D52E5 /* AtributikaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributikaViewController.swift; sourceTree = "<group>"; };
+		AC58EEB22A1EF64D007D52E5 /* CryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
+		AC58EEBB2A1F1644007D52E5 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
 		ACBB158D2A1B0826004B71CF /* AppleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginViewController.swift; sourceTree = "<group>"; };
 		ACBB15912A1B1B52004B71CF /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		ACBB15952A1B1BD8004B71CF /* SwiftPractice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftPractice.entitlements; sourceTree = "<group>"; };
@@ -303,6 +309,15 @@
 			isa = PBXGroup;
 			children = (
 				AC58EEAE2A1EE4F3007D52E5 /* AtributikaViewController.swift */,
+				AC58EEB22A1EF64D007D52E5 /* CryptoViewController.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		AC58EEBA2A1F1631007D52E5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				AC58EEBB2A1F1644007D52E5 /* CryptoViewModel.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -353,6 +368,7 @@
 			children = (
 				ACBB159B2A1B1F74004B71CF /* AppleLoginViewModel.swift */,
 				ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */,
+				AC58EEBA2A1F1631007D52E5 /* Library */,
 			);
 			path = "Signing & Capabilities";
 			sourceTree = "<group>";
@@ -620,6 +636,7 @@
 				A2C42BC62A0E4125008A5865 /* IndexViewController.swift in Sources */,
 				A242E0692A164D1D0010BED8 /* Extension+UIView.swift in Sources */,
 				A242E05C2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
+				AC58EEBC2A1F1644007D52E5 /* CryptoViewModel.swift in Sources */,
 				A2C42BC22A0E4125008A5865 /* AppDelegate.swift in Sources */,
 				ACBB15922A1B1B52004B71CF /* ExampleViewController.swift in Sources */,
 				ACBB15A32A1B38E4004B71CF /* User.swift in Sources */,
@@ -633,6 +650,7 @@
 				ACBB15A72A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				A2C42BF92A0E419A008A5865 /* Protocol.swift in Sources */,
 				ACBB159C2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
+				AC58EEB32A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +666,7 @@
 				A242E05D2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				ACBB15AC2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
 				A242E0652A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
+				AC58EEB42A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
 				ACBB158F2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
 				A2C42BFA2A0E419A008A5865 /* Protocol.swift in Sources */,
 				ACBB15932A1B1B52004B71CF /* ExampleViewController.swift in Sources */,
@@ -666,6 +685,7 @@
 				ACBB15902A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
 				ACBB15AD2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
 				AC35167D2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
+				AC58EEB52A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
 				A2C42BE52A0E4126008A5865 /* SwtiftPracticeUITestsLaunchTests.swift in Sources */,
 				ACBB159E2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 				AC3516792A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,

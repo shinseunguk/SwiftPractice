@@ -15,5 +15,4 @@ protocol UIViewControllerAttribute {
     func setNavigationBar()
     func setUI()
     func setAttributes()
-    func bindRx()
 }
