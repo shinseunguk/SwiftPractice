@@ -12,7 +12,7 @@ final class AtributikaViewController: UIViewController, UIViewControllerAttribut
     
     var navTitle: String?
     
-    lazy var testLabel1 = UILabel().then {
+    lazy var testLabel = UILabel().then {
         $0.numberOfLines = 0
         $0.sizeToFit()
         $0.textAlignment = .center
@@ -30,7 +30,7 @@ final class AtributikaViewController: UIViewController, UIViewControllerAttribut
         setNavigationBar()
         setUI()
         setAttributes()
-        bindRx()
+        bindRx() // 미사용 함수
         
         styledTextWithAtributika()
     }
@@ -42,16 +42,17 @@ final class AtributikaViewController: UIViewController, UIViewControllerAttribut
     func setUI() {
         self.view.backgroundColor = .white
         //        self.view.addSubview(attributedText)
-        self.view.addSubview(testLabel1)
+        self.view.addSubview(testLabel)
     }
     
     func setAttributes() {
-        testLabel1.snp.makeConstraints {
+        testLabel.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(50)
             $0.centerX.equalToSuperview()
         }
     }
     
+    /// 미사용 함수
     func bindRx() {
         
     }
@@ -64,6 +65,6 @@ final class AtributikaViewController: UIViewController, UIViewControllerAttribut
             
             This is a <customTag>custom tag</customTag> example.
             """.style(tags: boldStyle, linkStyle, customTagStyle)
-        testLabel1.attributedText = attributedText1.attributedString
+        testLabel.attributedText = attributedText1.attributedString
     }
 }
