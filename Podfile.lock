@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.7.1)
+  - Atributika (4.10.1)
   - Realm (10.39.1):
     - Realm/Headers (= 10.39.1)
   - Realm/Headers (10.39.1)
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Atributika
   - Realm
   - RxCocoa
   - RxSwift
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Atributika
     - Realm
     - RxCocoa
     - RxRelay
@@ -32,6 +35,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Atributika: 47e778507cfb3cd2c996278b0285221a62e97d71
   Realm: 1f3157edf145f4d9036765ab550c8cb18f62b700
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 65edcd9505079ae287a69bee1bd51b629b577007
+PODFILE CHECKSUM: 1a6b1f6d31bcd3015db7d39f6e059b7dbfde4dcd
 
 COCOAPODS: 1.11.3
