@@ -20,7 +20,8 @@ final class IndexViewController: UIViewController, UIViewControllerAttribute {
         "UIScrollView",
         "UITableView",
         "Signing & Capabilities",
-        "Library"
+        "Library",
+        "RxSwift"
     ]
     
     // 각 섹션의 데이터 배열
@@ -38,7 +39,10 @@ final class IndexViewController: UIViewController, UIViewControllerAttribute {
         [
             "Atributika",
             "CryptoSwift"
-        ] // Library
+        ], // Library
+        [
+            "MVVM+RxSwift 로그인 예제"
+        ] // Library(RxSwift)
     ]
     
     lazy var tableView = UITableView().then {
@@ -166,6 +170,17 @@ extension IndexViewController: UITableViewDataSource, UITableViewDelegate {
                 break
             }
             
+        case 4 : // RxSwift
+            
+            switch indexPath.row {
+            case 0: // MVVM+RxSwift 로그인 예제
+                let VC = LoginViewController()
+                VC.navTitle = sectionData[indexPath.section][indexPath.row]
+
+                self.navigationController?.pushViewController(VC, animated: true)
+            default:
+                break
+            }
         default:
             break
         }
