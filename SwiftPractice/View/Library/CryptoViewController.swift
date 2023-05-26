@@ -113,52 +113,39 @@ final class CryptoViewController: UIViewController, UIViewControllerAttribute {
     }
     
     func bindRx() {
+        // cryptoBool에 따라 버튼title / textfield isEnable값 변경
         viewModel.cryptoBool
             .subscribe(onNext: {
-                if $0 {
-                    self.cryptoButton.setTitle("복호화", for: .normal)
-                    self.cryptoTextField.isEnabled = false
-                }else {
-                    self.cryptoButton.setTitle("암호화", for: .normal)
-                    self.cryptoTextField.isEnabled = true
-                }
-                
-            },onError: {
-                print("error : \($0)")
-            },onCompleted: {
-                print("onCompleted")
+                self.cryptoTextField.isEnabled = !$0
+                $0 ? self.cryptoButton.setTitle("복호화", for: .normal) : self.cryptoButton.setTitle("암호화", for: .normal)
             })
             .disposed(by: disposeBag)
         
+        // cryptoTextField TextDidChange
         cryptoTextField.rx.text
             .orEmpty
             .asObservable()
-//            .map { "기존 텍스트 : \($0)" }
             .subscribe(onNext: {
                 self.originLabel.text = "기존 텍스트 : \($0)"
                 self.viewModel.inputText.accept($0)
-            },onError: {
-                print($0)
-            }, onCompleted: {
-                tLog("onCompleted")
             })
             .disposed(by: disposeBag)
         
+        // cryptoButton 버튼 탭 / 버튼 제목에 따라 함수 분기처리
         cryptoButton.rx.tap
             .subscribe(onNext: {
                 let title = self.cryptoButton.titleLabel?.text
                 title == "암호화" ? self.viewModel.encrypt() : self.viewModel.decrypt()
-            },onError: {
-                tLog("error : \($0)")
-            },onCompleted: {
-                tLog("onCompleted")
             })
+            .disposed(by: disposeBag)
         
+        // viewModel에서 기존 텍스트에서 암호화된 텍스트 view에 bind
         viewModel.encryptedText
             .map { "암호화 텍스트 : \($0)" }
             .bind(to: encryptLabel.rx.text)
             .disposed(by: disposeBag)
         
+        // viewModel에서 암호화 텍스트에서 복호화된 텍스트 view에 bind
         viewModel.decryptedText
             .map { "복호화 텍스트 : \($0)" }
             .bind(to: decryptLabel.rx.text)

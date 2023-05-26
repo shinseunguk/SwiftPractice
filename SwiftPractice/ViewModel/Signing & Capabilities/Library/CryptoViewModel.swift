@@ -12,14 +12,15 @@ import CryptoSwift
 
 final class CryptoViewModel {
     
-    let inputText = BehaviorRelay<String>(value: "")
-    let encryptedText = BehaviorRelay<String>(value: "")
-    let decryptedText = BehaviorRelay<String>(value: "")
+    let inputText = BehaviorRelay<String>(value: "") // 기존 텍스트
+    let encryptedText = BehaviorRelay<String>(value: "") // 암호화 텍스트
+    let decryptedText = BehaviorRelay<String>(value: "") // 복호화 텍스트
     
-    let cryptoBool = BehaviorRelay<Bool>(value: false)
+    let cryptoBool = BehaviorRelay<Bool>(value: false) // false => 복호화 or 기존 텍스트 상태 / true => 암호화된 상태
     
-    private let encryptionKey = "SecretKey123"
+    private let encryptionKey = "SecretKey123" // 키값, 해당 키값은 은닉 해야함
     
+    /// 암호화
     func encrypt() {
         guard let input = inputText.value.data(using: .utf8) else {
             return
@@ -42,6 +43,7 @@ final class CryptoViewModel {
         }
     }
     
+    /// 복호화
     func decrypt() {
         guard let input = Data(base64Encoded: encryptedText.value) else {
             return
