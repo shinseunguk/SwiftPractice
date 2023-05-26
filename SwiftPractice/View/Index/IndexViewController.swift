@@ -41,7 +41,8 @@ final class IndexViewController: UIViewController, UIViewControllerAttribute {
             "CryptoSwift"
         ], // Library
         [
-            "MVVM+RxSwift 로그인 예제"
+            "MVVM+RxSwift 로그인 예제",
+            "MVVM+RxSwift 키오스크(곰튀김)"
         ] // Library(RxSwift)
     ]
     
@@ -178,9 +179,15 @@ extension IndexViewController: UITableViewDataSource, UITableViewDelegate {
                 VC.navTitle = sectionData[indexPath.section][indexPath.row]
 
                 self.navigationController?.pushViewController(VC, animated: true)
+            case 1: // MVVM+RxSwift 키오스크(곰튀김)
+                let VC = KioskViewController()
+                VC.navTitle = sectionData[indexPath.section][indexPath.row]
+
+                self.navigationController?.pushViewController(VC, animated: true)
             default:
                 break
             }
+            
         default:
             break
         }
