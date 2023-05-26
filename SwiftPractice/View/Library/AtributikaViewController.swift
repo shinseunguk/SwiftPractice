@@ -47,9 +47,9 @@ final class AtributikaViewController: UIViewController, UIViewControllerAttribut
     
     func styledTextWithAtributika() {
         // Define styles for tags
-        let boldStyle = Style("b").font(.boldSystemFont(ofSize: 16))
-        let linkStyle = Style("a").foregroundColor(.blue).underlineStyle(.single)
-        let customTagStyle = Style("customTag").font(.italicSystemFont(ofSize: 14)).foregroundColor(.red)
+        let boldStyle = Style("b").font(.boldSystemFont(ofSize: 16)) // b 태그의 폰트는 boldSystemFont 16사이즈로
+        let linkStyle = Style("a").foregroundColor(.blue).underlineStyle(.single) // a 태그의 폰트 color는 파란색, 밑줄
+        let customTagStyle = Style("customTag").font(.italicSystemFont(ofSize: 14)).foregroundColor(.red) // customTag 태그의 폰트는 italicSystemFont 14 사이즈, fontcolor는 빨간색
         
         // 여러줄에 걸쳐 문자열(HTML코드)을 작성
         let attributedText = """
