@@ -11,12 +11,6 @@ import CryptoSwift
 import RxSwift
 import RxCocoa
 
-enum CryptoError: Error {
-    case invalidInputData
-    case invalidKey
-    case decryptionFailed
-}
-
 final class CryptoViewController: UIViewController, UIViewControllerAttribute {
     let disposeBag = DisposeBag()
     let viewModel = CryptoViewModel()
