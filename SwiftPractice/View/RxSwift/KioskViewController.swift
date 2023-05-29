@@ -17,6 +17,7 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     var navTitle: String?
     
     var menuArray: [String] = []
+    var priceArray: [Int] = []
     
     let titleLabel = UILabel().then {
         $0.text = "Bear Fried Center"
@@ -28,9 +29,40 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     lazy var tableView = UITableView().then {
         $0.delegate = self
         $0.dataSource = self
-        $0.register(TitleTableViewCell.self, forCellReuseIdentifier: "TitleTableViewCell")
+        $0.register(KioskTableViewCell.self, forCellReuseIdentifier: "KioskTableViewCell")
     }
     
+    let orderView = UIView().then {
+        $0.backgroundColor = .lightGray
+    }
+    
+    let orderViewLabel = UILabel().then {
+        $0.text = "Your orders"
+        $0.sizeToFit()
+        $0.textColor = .black
+        $0.font = .boldSystemFont(ofSize: 18)
+    }
+    
+    let clearButton = UIButton().then {
+        $0.setTitle("Clear", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        $0.backgroundColor = .systemBlue
+        $0.layer.cornerRadius = 5
+    }
+    
+    let itemCountLabel = UILabel().then {
+        $0.textColor = .blue
+        $0.font = .systemFont(ofSize: 17)
+        $0.sizeToFit()
+    }
+    
+    let totalPriceLabel = UILabel().then {
+        $0.text = "￦ 0"
+        $0.textColor = .black
+        $0.font = .systemFont(ofSize: 40)
+        $0.sizeToFit()
+    }
     
     let orderButton = UIButton().then {
         $0.setTitle("ORDER", for: .normal)
@@ -71,6 +103,28 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
         ].map {
             menuArray.append($0)
         }
+        
+        _ = [
+            200,
+            400,
+            400,
+            300,
+            250,
+            200,
+            200,
+            150,
+            250,
+            200,
+            300,
+            600,
+            300,
+            500,
+            1000
+        ].map {
+            priceArray.append($0)
+        }
+        
+        viewModel.price = priceArray
     }
     
     func setNavigationBar() {
@@ -79,9 +133,17 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     
     func setUI() {
         self.view.backgroundColor = .white
-        self.view.addSubview(titleLabel)
-        self.view.addSubview(tableView)
-        self.view.addSubview(orderButton)
+        
+        self.view.addSubview(titleLabel) // Bear Fried Center
+        self.view.addSubview(tableView) // 테이블뷰
+        
+        self.view.addSubview(orderView) // You Orders
+        self.orderView.addSubview(orderViewLabel)
+        self.orderView.addSubview(clearButton)
+        self.orderView.addSubview(itemCountLabel)
+        self.orderView.addSubview(totalPriceLabel)
+        
+        self.view.addSubview(orderButton) // 하단 ORDER 버튼
     }
     
     func setAttributes() {
@@ -94,7 +156,34 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
         tableView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.left.right.equalToSuperview()
-            $0.height.equalTo(300)
+            $0.bottom.equalTo(orderView.snp.top)
+        }
+        
+        orderView.snp.makeConstraints {
+            $0.height.equalTo(120)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalTo(orderButton.snp.top)
+        }
+        
+        orderViewLabel.snp.makeConstraints {
+            $0.top.equalTo(10)
+            $0.left.equalTo(20)
+        }
+        
+        clearButton.snp.makeConstraints {
+            $0.centerY.equalTo(orderViewLabel.snp.centerY)
+            $0.left.equalTo(orderViewLabel.snp.right).offset(20)
+            $0.width.equalTo(55)
+        }
+        
+        itemCountLabel.snp.makeConstraints {
+            $0.centerY.equalTo(orderViewLabel.snp.centerY)
+            $0.right.equalTo(-30)
+        }
+        
+        totalPriceLabel.snp.makeConstraints {
+            $0.top.equalTo(itemCountLabel.snp.bottom).offset(20)
+            $0.right.equalTo(-20)
         }
         
         orderButton.snp.makeConstraints {
@@ -105,21 +194,38 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     }
     
     func bindRx() {
+        viewModel.totalCount
+            .map { "\($0) items" }
+            .bind(to: itemCountLabel.rx.text)
+            .disposed(by: disposeBag)
         
+        viewModel.totalPrice
+            .map { "￦ \($0)" }
+            .bind(to: totalPriceLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
 extension KioskViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TitleTableViewCell", for: indexPath) as! TitleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "KioskTableViewCell", for: indexPath) as! KioskTableViewCell
+        cell.selectionStyle = .none // Disable cell click
         
-        let item = menuArray[indexPath.row]
-        cell.title.text = item
+        let menu = menuArray[indexPath.row]
+        let price = priceArray[indexPath.row]
+        
+        cell.index = indexPath.row
+        cell.titleLabel.text = menu
+        cell.priceLabel.text = String(price)
         
         return cell
     }

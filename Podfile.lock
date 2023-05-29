@@ -2,9 +2,9 @@ PODS:
   - Alamofire (5.7.1)
   - Atributika (4.10.1)
   - CryptoSwift (1.7.1)
-  - Realm (10.39.1):
-    - Realm/Headers (= 10.39.1)
-  - Realm/Headers (10.39.1)
+  - Realm (10.40.0):
+    - Realm/Headers (= 10.40.0)
+  - Realm/Headers (10.40.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -40,13 +40,13 @@ SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   Atributika: 47e778507cfb3cd2c996278b0285221a62e97d71
   CryptoSwift: d3d18dc357932f7e6d580689e065cf1f176007c1
-  Realm: 1f3157edf145f4d9036765ab550c8cb18f62b700
+  Realm: 67e2bc963e693a787961bd81d0594f2410615d9e
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 468d1a420b218aebce3b41b8fda1337699d77435
+PODFILE CHECKSUM: defb158e18e24d34539a25a44b4450a82d54377b
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
