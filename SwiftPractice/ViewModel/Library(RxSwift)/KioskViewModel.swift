@@ -10,38 +10,40 @@ import RxCocoa
 import RxSwift
 
 final class KioskViewModel {
+    let kioskApiService = KioskAPIService()
+    let disposeBag = DisposeBag()
+    
+    let menu = PublishSubject<[Menu]>()
+    let isLoading = BehaviorSubject<Bool>(value: false)
     
     let totalPrice = PublishRelay<Int>()
     let totalCount = BehaviorRelay<Int>(value: 0)
     
-    var price : [Int]?
-    var count : [BehaviorRelay<Int>] = [
-        BehaviorRelay<Int>(value: 1),
-        BehaviorRelay<Int>(value: 2),
-        BehaviorRelay<Int>(value: 3),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0),
-        BehaviorRelay<Int>(value: 0)
-    ]
-    
-    func increaseCount() {
-        let currentCount = totalCount.value
-        totalCount.accept(currentCount + 1)
+    func fetchUsers() {
+        isLoading.onNext(true)
+        kioskApiService.getUsers()
+            .subscribe(
+                onNext: { [weak self] value in
+                    self?.menu.onNext(value)
+                    self?.isLoading.onNext(false)
+                },
+                onError: { [weak self] error in
+                    // 에러 처리
+                    self?.isLoading.onNext(false)
+                }
+            )
+            .disposed(by: disposeBag)
     }
-
-    func decreaseCount() {
-        let currentCount = totalCount.value
-        if currentCount > 0 {
-            totalCount.accept(currentCount - 1)
-        }
+    
+    func increaseCount(arrayIndex: Int) {
+        //        let currentCount = totalCount.value
+        //        totalCount.accept(currentCount + 1)
+    }
+    
+    func decreaseCount(arrayIndex: Int) {
+        //        let currentCount = totalCount.value
+        //        if currentCount > 0 {
+        //            totalCount.accept(currentCount - 1)
+        //        }
     }
 }

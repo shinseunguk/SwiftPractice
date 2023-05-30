@@ -75,6 +75,12 @@
 		ACBB15AB2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */; };
 		ACBB15AC2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */; };
 		ACBB15AD2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */; };
+		ACD197222A25D937008956C8 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD197212A25D937008956C8 /* Menu.swift */; };
+		ACD197232A25D937008956C8 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD197212A25D937008956C8 /* Menu.swift */; };
+		ACD197242A25D937008956C8 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD197212A25D937008956C8 /* Menu.swift */; };
+		ACD197272A25D9D5008956C8 /* KioskAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD197262A25D9D5008956C8 /* KioskAPIService.swift */; };
+		ACD197282A25D9D5008956C8 /* KioskAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD197262A25D9D5008956C8 /* KioskAPIService.swift */; };
+		ACD197292A25D9D5008956C8 /* KioskAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD197262A25D9D5008956C8 /* KioskAPIService.swift */; };
 		C4CCCC34C0EFEECAD9533A77 /* Pods_SwiftPracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F484146F40D04B8B3F594E9 /* Pods_SwiftPracticeTests.framework */; };
 		EE3BB91F9557DB384C39005B /* Pods_SwiftPractice_SwiftPracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DA11FD832D2A1AB15E83B7 /* Pods_SwiftPractice_SwiftPracticeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -137,6 +143,8 @@
 		ACBB15A22A1B38E4004B71CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACBB15A62A1B4D5B004B71CF /* HotspotConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotConfigurationViewController.swift; sourceTree = "<group>"; };
 		ACBB15AA2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotConfigurationViewModel.swift; sourceTree = "<group>"; };
+		ACD197212A25D937008956C8 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		ACD197262A25D9D5008956C8 /* KioskAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskAPIService.swift; sourceTree = "<group>"; };
 		BD20681730415627B7296A0A /* Pods-SwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPractice.release.xcconfig"; path = "Target Support Files/Pods-SwiftPractice/Pods-SwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 		CFC76754AB465104A9C9E5A0 /* Pods-SwiftPracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPracticeTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftPracticeTests/Pods-SwiftPracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA3FDA68D5092E487CA1D20F /* Pods_SwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +286,7 @@
 				A242E0602A15096E0010BED8 /* View */,
 				ACBB159A2A1B1F66004B71CF /* ViewModel */,
 				ACBB15A12A1B38DB004B71CF /* Model */,
+				ACD197252A25D9BF008956C8 /* API */,
 				A242E0612A15097C0010BED8 /* Resources */,
 				A242E0622A15098B0010BED8 /* StoryBoards */,
 			);
@@ -426,8 +435,17 @@
 			isa = PBXGroup;
 			children = (
 				ACBB15A22A1B38E4004B71CF /* User.swift */,
+				ACD197212A25D937008956C8 /* Menu.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ACD197252A25D9BF008956C8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				ACD197262A25D9D5008956C8 /* KioskAPIService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		ED1306D823968CC1DA11EA83 /* Pods */ = {
@@ -695,6 +713,7 @@
 				A242E0642A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
 				AC3516772A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
 				AC58EEAF2A1EE4F3007D52E5 /* AtributikaViewController.swift in Sources */,
+				ACD197222A25D937008956C8 /* Menu.swift in Sources */,
 				AC9774992A20A47000533E4F /* KioskViewController.swift in Sources */,
 				A242E06C2A23A3360010BED8 /* KioskTableViewCell.swift in Sources */,
 				ACBB158E2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
@@ -702,6 +721,7 @@
 				A2C42BC42A0E4125008A5865 /* SceneDelegate.swift in Sources */,
 				ACBB15A72A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				A2C42BF92A0E419A008A5865 /* Protocol.swift in Sources */,
+				ACD197272A25D9D5008956C8 /* KioskAPIService.swift in Sources */,
 				ACBB159C2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 				AC58EEB32A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
 				AC9774912A2054B600533E4F /* LoginViewModel.swift in Sources */,
@@ -718,9 +738,11 @@
 				ACBB15A82A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				AC97749A2A20A47000533E4F /* KioskViewController.swift in Sources */,
 				A2C42BD92A0E4126008A5865 /* SwtiftPracticeTests.swift in Sources */,
+				ACD197282A25D9D5008956C8 /* KioskAPIService.swift in Sources */,
 				A242E05D2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				ACBB15AC2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
 				A242E0652A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
+				ACD197232A25D937008956C8 /* Menu.swift in Sources */,
 				AC58EEB42A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
 				ACBB158F2A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
 				A242E06D2A23A3360010BED8 /* KioskTableViewCell.swift in Sources */,
@@ -751,10 +773,12 @@
 				ACBB159E2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 				AC9774932A2054B600533E4F /* LoginViewModel.swift in Sources */,
 				AC3516792A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
+				ACD197292A25D9D5008956C8 /* KioskAPIService.swift in Sources */,
 				A242E05E2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				A2C42BF62A0E417E008A5865 /* LogHelper.swift in Sources */,
 				ACBB15A52A1B38E4004B71CF /* User.swift in Sources */,
 				AC58EEB12A1EE4F3007D52E5 /* AtributikaViewController.swift in Sources */,
+				ACD197242A25D937008956C8 /* Menu.swift in Sources */,
 				AC97748F2A2054AA00533E4F /* LoginViewController.swift in Sources */,
 				AC97749B2A20A47000533E4F /* KioskViewController.swift in Sources */,
 				A2C42BE32A0E4126008A5865 /* SwtiftPracticeUITests.swift in Sources */,

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxCocoa
 import RxSwift
+import RxViewController
 
 final class KioskViewController: UIViewController, UIViewControllerAttribute {
     let viewModel = KioskViewModel()
@@ -19,6 +20,11 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     var menuArray: [String] = []
     var priceArray: [Int] = []
     
+    lazy var loadingIndicator = UIActivityIndicatorView().then {
+        $0.color = .gray
+        $0.hidesWhenStopped = true
+    }
+    
     let titleLabel = UILabel().then {
         $0.text = "Bear Fried Center"
         $0.font = .boldSystemFont(ofSize: 40)
@@ -27,8 +33,6 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     }
     
     lazy var tableView = UITableView().then {
-        $0.delegate = self
-        $0.dataSource = self
         $0.register(KioskTableViewCell.self, forCellReuseIdentifier: "KioskTableViewCell")
     }
     
@@ -76,55 +80,10 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTableViewArray()
         setNavigationBar()
         setUI()
         setAttributes()
         bindRx()
-    }
-    
-    func setTableViewArray() {
-        _ = [
-            "김말이",
-            "오징어튀김",
-            "새우튀김",
-            "고구마튀김",
-            "탕수육",
-            "야채튀김",
-            "만두튀김",
-            "멸치튀김",
-            "감자튀김",
-            "떡튀김",
-            "쏘세지튀김",
-            "곰튀김",
-            "치킨",
-            "피자",
-            "햄버거"
-        ].map {
-            menuArray.append($0)
-        }
-        
-        _ = [
-            200,
-            400,
-            400,
-            300,
-            250,
-            200,
-            200,
-            150,
-            250,
-            200,
-            300,
-            600,
-            300,
-            500,
-            1000
-        ].map {
-            priceArray.append($0)
-        }
-        
-        viewModel.price = priceArray
     }
     
     func setNavigationBar() {
@@ -134,6 +93,7 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     func setUI() {
         self.view.backgroundColor = .white
         
+        self.view.addSubview(loadingIndicator)
         self.view.addSubview(titleLabel) // Bear Fried Center
         self.view.addSubview(tableView) // 테이블뷰
         
@@ -194,6 +154,20 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     }
     
     func bindRx() {
+        
+        rx.viewWillAppear
+            .subscribe(onNext: { _ in
+                self.viewModel.fetchUsers()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.menu
+            .bind(to: tableView.rx.items(cellIdentifier: "KioskTableViewCell", cellType: KioskTableViewCell.self)) { index, menu, cell in
+                cell.titleLabel.text = menu.name
+                cell.priceLabel.text = String(menu.price ?? 0)
+            }
+            .disposed(by: disposeBag)
+        
         viewModel.totalCount
             .map { "\($0) items" }
             .bind(to: itemCountLabel.rx.text)
@@ -203,31 +177,6 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
             .map { "￦ \($0)" }
             .bind(to: totalPriceLabel.rx.text)
             .disposed(by: disposeBag)
-    }
-}
-
-extension KioskViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "KioskTableViewCell", for: indexPath) as! KioskTableViewCell
-        cell.selectionStyle = .none // Disable cell click
-        
-        let menu = menuArray[indexPath.row]
-        let price = priceArray[indexPath.row]
-        
-        cell.index = indexPath.row
-        cell.titleLabel.text = menu
-        cell.priceLabel.text = String(price)
-        
-        return cell
     }
 }
 

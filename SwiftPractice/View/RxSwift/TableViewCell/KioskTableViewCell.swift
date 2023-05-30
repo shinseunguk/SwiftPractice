@@ -98,7 +98,7 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 tLog("plusButton tapped at index: \(self.index)")
-                self.viewModel.increaseCount()
+                self.viewModel.increaseCount(arrayIndex: self.index)
             })
             .disposed(by: disposeBag)
         
@@ -106,19 +106,14 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 tLog("minusButton tapped at index: \(self.index)")
-                self.viewModel.decreaseCount()
+                self.viewModel.decreaseCount(arrayIndex: self.index)
             })
-            .disposed(by: disposeBag)
-        
-        viewModel.count[index]
-            .map { "(\($0))" }
-            .bind(to: countLabel.rx.text)
             .disposed(by: disposeBag)
         
         viewModel.totalCount
             .map { "\($0) items" }
             .subscribe(onNext: {
-                tLog($0)
+                
             })
             .disposed(by: disposeBag)
     }

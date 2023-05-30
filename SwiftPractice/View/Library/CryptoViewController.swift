@@ -119,8 +119,10 @@ final class CryptoViewController: UIViewController, UIViewControllerAttribute {
         cryptoTextField.rx.text
             .orEmpty
             .asObservable()
-            .subscribe(onNext: {
+            .do(onNext: {
                 self.originLabel.text = "기존 텍스트 : \($0)"
+            })
+            .subscribe(onNext: {
                 self.viewModel.inputText.accept($0)
             })
             .disposed(by: disposeBag)
