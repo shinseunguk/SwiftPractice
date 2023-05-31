@@ -13,9 +13,9 @@ class KioskAPIService {
     
     let URL = "https://firebasestorage.googleapis.com/v0/b/rxswiftin4hours.appspot.com/o/fried_menus.json?alt=media&token=42d5cb7e-8ec4-48f9-bf39-3049e796c936"
     
-    func getUsers() -> Observable<[Menu]> {
+    func getUsers() -> Observable<[MenuItem]> {
         struct response : Codable {
-            let menus : [Menu]
+            let menus : [MenuItem]
         }
         
         return Observable.create { observer in

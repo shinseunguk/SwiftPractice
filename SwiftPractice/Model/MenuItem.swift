@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Menu : Codable {
-    let name : String?
-    let price : Int?
+struct MenuItem : Codable {
+    let name : String
+    let price : Int
 }

@@ -20,7 +20,7 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     var menuArray: [String] = []
     var priceArray: [Int] = []
     
-    lazy var loadingIndicator = UIActivityIndicatorView().then {
+    lazy var activityIndicator = UIActivityIndicatorView().then {
         $0.color = .gray
         $0.hidesWhenStopped = true
     }
@@ -93,7 +93,7 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     func setUI() {
         self.view.backgroundColor = .white
         
-        self.view.addSubview(loadingIndicator)
+        self.view.addSubview(activityIndicator)
         self.view.addSubview(titleLabel) // Bear Fried Center
         self.view.addSubview(tableView) // 테이블뷰
         
@@ -154,27 +154,42 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
     }
     
     func bindRx() {
-        
-        rx.viewWillAppear
-            .subscribe(onNext: { _ in
-                self.viewModel.fetchUsers()
-            })
+        // 처음 로딩할 때 하고, 당겨서 새로고침 할 때
+        let firstLoad = rx.viewWillAppear
+            .take(1)
+            .map { _ in () }
+        let reload = tableView.refreshControl?.rx
+            .controlEvent(.valueChanged)
+            .map { _ in () } ?? Observable.just(())
+
+        Observable.merge([firstLoad, reload])
+            .bind(to: viewModel.fetchMenus)
             .disposed(by: disposeBag)
         
-        viewModel.menu
-            .bind(to: tableView.rx.items(cellIdentifier: "KioskTableViewCell", cellType: KioskTableViewCell.self)) { index, menu, cell in
-                cell.titleLabel.text = menu.name
-                cell.priceLabel.text = String(menu.price ?? 0)
+        // 셀 클릭 비활성화
+        tableView.rx.itemSelected.subscribe(onNext: { indexPath in
+            if let cell = self.tableView.cellForRow(at: indexPath) {
+                cell.selectionStyle = .none
+            }
+        }).disposed(by: disposeBag)
+        
+        viewModel.allMenus
+            .bind(to: tableView.rx.items(cellIdentifier: "KioskTableViewCell", cellType: KioskTableViewCell.self)) { index, item, cell in
+                
+                cell.onData.onNext(item)
+                cell.onChanged
+                    .map { (item, $0) }
+                    .bind(to: self.viewModel.increaseMenuCount)
+                    .disposed(by: cell.disposeBag)
             }
             .disposed(by: disposeBag)
         
-        viewModel.totalCount
+        viewModel.totalSelectedCountText
             .map { "\($0) items" }
             .bind(to: itemCountLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel.totalPrice
-            .map { "￦ \($0)" }
+        viewModel.totalPriceText
             .bind(to: totalPriceLabel.rx.text)
             .disposed(by: disposeBag)
     }

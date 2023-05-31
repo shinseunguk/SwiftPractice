@@ -11,8 +11,12 @@ import RxSwift
 import RxCocoa
 
 final class KioskTableViewCell: UITableViewCell, ViewAttribute {
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     let viewModel = KioskViewModel()
+    
+    private let onCountChanged: (Int) -> Void
+    let onData: AnyObserver<ViewMenu>
+    let onChanged: Observable<Int>
     
     var index: Int = 0 // 인덱스를 저장하는 속성 추가
     
@@ -45,11 +49,31 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        let data = PublishSubject<ViewMenu>()
+        let changing = PublishSubject<Int>()
+        onCountChanged = { changing.onNext($0) }
+        
+        onData = data.asObserver()
+        onChanged = changing
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        data.observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] menu in
+                self?.titleLabel.text = menu.name
+                self?.priceLabel.text = "\(menu.price)"
+                self?.countLabel.text = "\(menu.count)"
+            })
+            .disposed(by: disposeBag)
         
         setUI()
         setAttributes()
         bindRx()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
@@ -98,22 +122,16 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 tLog("plusButton tapped at index: \(self.index)")
-                self.viewModel.increaseCount(arrayIndex: self.index)
+                self.onCountChanged(1)
             })
             .disposed(by: disposeBag)
-        
+
         minusButton.rx.tap
             .subscribe(onNext: { [weak self] in
+                tLog("")
                 guard let self = self else { return }
                 tLog("minusButton tapped at index: \(self.index)")
-                self.viewModel.decreaseCount(arrayIndex: self.index)
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.totalCount
-            .map { "\($0) items" }
-            .subscribe(onNext: {
-                
+                self.onCountChanged(-1)
             })
             .disposed(by: disposeBag)
     }
