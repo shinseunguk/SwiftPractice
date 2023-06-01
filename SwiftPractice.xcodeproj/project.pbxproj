@@ -54,6 +54,12 @@
 		AC58EEB42A1EF64D007D52E5 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEB22A1EF64D007D52E5 /* CryptoViewController.swift */; };
 		AC58EEB52A1EF64D007D52E5 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEB22A1EF64D007D52E5 /* CryptoViewController.swift */; };
 		AC58EEBC2A1F1644007D52E5 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EEBB2A1F1644007D52E5 /* CryptoViewModel.swift */; };
+		AC5B4CE02A2822D2000696C9 /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B4CDF2A2822D2000696C9 /* SearchBarViewController.swift */; };
+		AC5B4CE12A2822D2000696C9 /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B4CDF2A2822D2000696C9 /* SearchBarViewController.swift */; };
+		AC5B4CE22A2822D2000696C9 /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B4CDF2A2822D2000696C9 /* SearchBarViewController.swift */; };
+		AC5B4CE42A2828CA000696C9 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B4CE32A2828CA000696C9 /* SearchBarViewModel.swift */; };
+		AC5B4CE52A2828CA000696C9 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B4CE32A2828CA000696C9 /* SearchBarViewModel.swift */; };
+		AC5B4CE62A2828CA000696C9 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5B4CE32A2828CA000696C9 /* SearchBarViewModel.swift */; };
 		AC97748D2A2054AA00533E4F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97748C2A2054AA00533E4F /* LoginViewController.swift */; };
 		AC97748E2A2054AA00533E4F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97748C2A2054AA00533E4F /* LoginViewController.swift */; };
 		AC97748F2A2054AA00533E4F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97748C2A2054AA00533E4F /* LoginViewController.swift */; };
@@ -144,6 +150,8 @@
 		AC58EEAE2A1EE4F3007D52E5 /* AtributikaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributikaViewController.swift; sourceTree = "<group>"; };
 		AC58EEB22A1EF64D007D52E5 /* CryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
 		AC58EEBB2A1F1644007D52E5 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
+		AC5B4CDF2A2822D2000696C9 /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
+		AC5B4CE32A2828CA000696C9 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		AC97748C2A2054AA00533E4F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC9774902A2054B600533E4F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AC9774942A20A46800533E4F /* KioskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskViewModel.swift; sourceTree = "<group>"; };
@@ -378,6 +386,7 @@
 			children = (
 				AC9774902A2054B600533E4F /* LoginViewModel.swift */,
 				AC9774942A20A46800533E4F /* KioskViewModel.swift */,
+				AC5B4CE32A2828CA000696C9 /* SearchBarViewModel.swift */,
 			);
 			path = "Library(RxSwift)";
 			sourceTree = "<group>";
@@ -389,6 +398,7 @@
 				AC97748C2A2054AA00533E4F /* LoginViewController.swift */,
 				AC9774982A20A47000533E4F /* KioskViewController.swift */,
 				AC09B9342A273141002B0A47 /* FoundationExampleViewController.swift */,
+				AC5B4CDF2A2822D2000696C9 /* SearchBarViewController.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -723,6 +733,7 @@
 				AC9774952A20A46800533E4F /* KioskViewModel.swift in Sources */,
 				AC58EEBC2A1F1644007D52E5 /* CryptoViewModel.swift in Sources */,
 				A2C42BC22A0E4125008A5865 /* AppDelegate.swift in Sources */,
+				AC5B4CE42A2828CA000696C9 /* SearchBarViewModel.swift in Sources */,
 				ACBB15922A1B1B52004B71CF /* ExampleViewController.swift in Sources */,
 				ACBB15A32A1B38E4004B71CF /* User.swift in Sources */,
 				AC97748D2A2054AA00533E4F /* LoginViewController.swift in Sources */,
@@ -740,6 +751,7 @@
 				ACBB15A72A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				A2C42BF92A0E419A008A5865 /* Protocol.swift in Sources */,
 				ACD197272A25D9D5008956C8 /* KioskAPIService.swift in Sources */,
+				AC5B4CE02A2822D2000696C9 /* SearchBarViewController.swift in Sources */,
 				ACBB159C2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 				AC58EEB32A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
 				AC9774912A2054B600533E4F /* LoginViewModel.swift in Sources */,
@@ -754,6 +766,7 @@
 				AC3516782A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
 				A2C42BF52A0E417E008A5865 /* LogHelper.swift in Sources */,
 				ACBB15A82A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
+				AC5B4CE12A2822D2000696C9 /* SearchBarViewController.swift in Sources */,
 				AC97749A2A20A47000533E4F /* KioskViewController.swift in Sources */,
 				A2C42BD92A0E4126008A5865 /* SwtiftPracticeTests.swift in Sources */,
 				ACD197282A25D9D5008956C8 /* KioskAPIService.swift in Sources */,
@@ -770,6 +783,7 @@
 				ACBB15932A1B1B52004B71CF /* ExampleViewController.swift in Sources */,
 				AC09B9322A2714C2002B0A47 /* Extension+Int.swift in Sources */,
 				AC97748E2A2054AA00533E4F /* LoginViewController.swift in Sources */,
+				AC5B4CE52A2828CA000696C9 /* SearchBarViewModel.swift in Sources */,
 				ACBB159D2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 				AC09B92E2A26EACC002B0A47 /* ViewMenu.swift in Sources */,
 				AC58EEB02A1EE4F3007D52E5 /* AtributikaViewController.swift in Sources */,
@@ -788,6 +802,7 @@
 				AC9774972A20A46800533E4F /* KioskViewModel.swift in Sources */,
 				A242E0662A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
 				ACBB15902A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
+				AC5B4CE62A2828CA000696C9 /* SearchBarViewModel.swift in Sources */,
 				ACBB15AD2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
 				AC35167D2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
 				AC58EEB52A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
@@ -796,6 +811,7 @@
 				AC9774932A2054B600533E4F /* LoginViewModel.swift in Sources */,
 				AC3516792A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
 				ACD197292A25D9D5008956C8 /* KioskAPIService.swift in Sources */,
+				AC5B4CE22A2822D2000696C9 /* SearchBarViewController.swift in Sources */,
 				A242E05E2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				A2C42BF62A0E417E008A5865 /* LogHelper.swift in Sources */,
 				ACBB15A52A1B38E4004B71CF /* User.swift in Sources */,

@@ -120,7 +120,7 @@ final class FoundationExampleViewController: UIViewController, UIViewControllerA
 
 //        --------------------------------------------------------
         
-        // throttle, 특정시간 동안 이벤트 방출 제한
+        // throttle, 특정시간 동안 이벤트 방출 제한 (버튼 중복 클릭에 유용)
 //        let button = UIButton(type: .system).then {
 //            $0.setTitle("throttle", for: .normal)
 //        }
@@ -141,7 +141,7 @@ final class FoundationExampleViewController: UIViewController, UIViewControllerA
         
 //        --------------------------------------------------------
         
-        // debounce 특정시간 이후에 방출
+        // debounce 특정시간 이후에 방출 (UISearchBar에 유용)
         let tf = UITextField().then {
             $0.borderStyle = .roundedRect
         }

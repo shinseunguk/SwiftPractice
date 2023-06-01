@@ -43,7 +43,8 @@ final class IndexViewController: UIViewController, UIViewControllerAttribute {
         [
             "MVVM+RxSwift 로그인 예제",
             "MVVM+RxSwift 키오스크(곰튀김)",
-            "RxSwift 기초 예제"
+            "RxSwift 기초 예제",
+            "UISearchBar를 이용한 예제"
         ] // Library(RxSwift)
     ]
     
@@ -187,6 +188,11 @@ extension IndexViewController: UITableViewDataSource, UITableViewDelegate {
                 self.navigationController?.pushViewController(VC, animated: true)
             case 2: // RxSwift 기초예제
                 let VC = FoundationExampleViewController()
+                VC.navTitle = sectionData[indexPath.section][indexPath.row]
+
+                self.navigationController?.pushViewController(VC, animated: true)
+            case 3: // UISearchBar를 이용한 예제
+                let VC = SearchBarViewController()
                 VC.navTitle = sectionData[indexPath.section][indexPath.row]
 
                 self.navigationController?.pushViewController(VC, animated: true)
