@@ -14,11 +14,10 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
     var disposeBag = DisposeBag()
     let viewModel = KioskViewModel()
     
-    private let onCountChanged: (Int) -> Void
-    let onData: AnyObserver<ViewMenu>
-    let onChanged: Observable<Int>
+    let onCountChanged : (Int) -> (Void)
     
-    var index: Int = 0 // 인덱스를 저장하는 속성 추가
+    let onData = PublishSubject<ViewMenu>()
+    let onChanged : Observable<Int>
     
     let plusButton = UIButton().then {
         $0.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -49,22 +48,13 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        let data = PublishSubject<ViewMenu>()
         let changing = PublishSubject<Int>()
         onCountChanged = { changing.onNext($0) }
         
-        onData = data.asObserver()
         onChanged = changing
         
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        data.observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] menu in
-                self?.titleLabel.text = menu.name
-                self?.priceLabel.text = "\(menu.price)"
-                self?.countLabel.text = "\(menu.count)"
-            })
-            .disposed(by: disposeBag)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setUI()
         setAttributes()
@@ -118,10 +108,21 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
     }
     
     func bindRx() {
+        onData
+            .subscribe(onNext: { [weak self] menu in
+                self?.titleLabel.text = menu.name
+                self?.priceLabel.text = String(menu.price)
+                self?.countLabel.text = "(\(String(menu.count)))"
+            }, onError: {
+                print("error \($0)")
+            }, onCompleted: {
+                print("onCompleted")
+            })
+            .disposed(by: disposeBag)
+        
         plusButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
-                tLog("plusButton tapped at index: \(self.index)")
                 self.onCountChanged(1)
             })
             .disposed(by: disposeBag)
@@ -130,7 +131,6 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
             .subscribe(onNext: { [weak self] in
                 tLog("")
                 guard let self = self else { return }
-                tLog("minusButton tapped at index: \(self.index)")
                 self.onCountChanged(-1)
             })
             .disposed(by: disposeBag)

@@ -166,22 +166,28 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
             .bind(to: viewModel.fetchMenus)
             .disposed(by: disposeBag)
         
-        // 셀 클릭 비활성화
-        tableView.rx.itemSelected.subscribe(onNext: { indexPath in
-            if let cell = self.tableView.cellForRow(at: indexPath) {
-                cell.selectionStyle = .none
-            }
-        }).disposed(by: disposeBag)
-        
         viewModel.allMenus
             .bind(to: tableView.rx.items(cellIdentifier: "KioskTableViewCell", cellType: KioskTableViewCell.self)) { index, item, cell in
-                
                 cell.onData.onNext(item)
                 cell.onChanged
+                    .do(onNext: {
+                        tLog(item)
+                        tLog($0)
+                    })
                     .map { (item, $0) }
-                    .bind(to: self.viewModel.increaseMenuCount)
+                    .bind(to: self.viewModel.incleasing)
                     .disposed(by: cell.disposeBag)
             }
+            .disposed(by: disposeBag)
+        
+        clearButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.clearAction()
+            }, onError: {
+                tLog("Error \($0)")
+            }, onCompleted: {
+                tLog("onCompleted")
+            })
             .disposed(by: disposeBag)
         
         viewModel.totalSelectedCountText
@@ -190,6 +196,7 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
             .disposed(by: disposeBag)
         
         viewModel.totalPriceText
+            .map { "₩\(String($0))" }
             .bind(to: totalPriceLabel.rx.text)
             .disposed(by: disposeBag)
     }
