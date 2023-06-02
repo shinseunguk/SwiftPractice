@@ -78,14 +78,12 @@ final class SearchBarViewController: UIViewController, UIViewControllerAttribute
         
         viewModel.allMenus
             .bind(to: tableView.rx.items(cellIdentifier: "TitleTableViewCell", cellType: TitleTableViewCell.self)) { row, item, cell in
-                tLog("")
                 cell.title.text = item.name
             }
             .disposed(by: disposeBag)
         
         viewModel.allMenus
             .subscribe(onNext: { [weak self] _ in
-                tLog("")
                 self?.tableView.reloadData()
             })
             .disposed(by: disposeBag)
