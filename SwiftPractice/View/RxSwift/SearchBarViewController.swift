@@ -16,14 +16,13 @@ final class SearchBarViewController: UIViewController, UIViewControllerAttribute
     let viewModel = SearchBarViewModel()
     var navTitle: String?
     
-    var menuItemArray : [MenuItem] = []
+    var menuItemArray : [MenuItem]?
     
     let searchController = UISearchController(searchResultsController: nil).then {
         $0.searchBar.setValue("취소", forKey: "cancelButtonText")
-        //        $0.hidesNavigationBarDuringPresentation = true
     }
     
-    let tableView = UITableView().then {
+    lazy var tableView = UITableView().then {
         $0.register(TitleTableViewCell.self, forCellReuseIdentifier: "TitleTableViewCell")
     }
     
@@ -78,10 +77,17 @@ final class SearchBarViewController: UIViewController, UIViewControllerAttribute
             .disposed(by: disposeBag)
         
         viewModel.allMenus
-            .bind(to: tableView.rx.items(cellIdentifier: "TitleTableViewCell", cellType: TitleTableViewCell.self)) { index, item, cell in
+            .bind(to: tableView.rx.items(cellIdentifier: "TitleTableViewCell", cellType: TitleTableViewCell.self)) { row, item, cell in
+                tLog("")
                 cell.title.text = item.name
             }
             .disposed(by: disposeBag)
+        
+        viewModel.allMenus
+            .subscribe(onNext: { [weak self] _ in
+                tLog("")
+                self?.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)
     }
-    
 }

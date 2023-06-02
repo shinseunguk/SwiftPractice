@@ -12,7 +12,7 @@ import RxCocoa
 final class SearchBarViewModel {
     let disposeBag = DisposeBag()
     var fetchMenus: AnyObserver<Void>
-    var allMenus: Observable<[MenuItem]>
+    var allMenus = BehaviorSubject<[MenuItem]>(value: [])
     let changeMenus = BehaviorSubject<[MenuItem]>(value: [])
     let menus = BehaviorSubject<[MenuItem]>(value: [])
     
@@ -24,20 +24,29 @@ final class SearchBarViewModel {
         
         fetching
             .flatMap(api.getUsers)
-            .do(onNext: { dump($0) })
-            .subscribe(onNext: menus.onNext)
+            .subscribe(onNext: {
+                self.menus.onNext($0)
+                self.allMenus.onNext($0)
+            })
             .disposed(by: disposeBag)
-        
-        allMenus = menus
     }
     
     func filterData(searchText: String) {
-        
         if searchText.isEmpty {
-            tLog("")
+            menus
+                .subscribe(onNext: { [weak self] nonFilteredMenus in
+                    self?.allMenus.onNext(nonFilteredMenus)
+                })
+                .disposed(by: disposeBag)
         } else {
-            tLog(searchText)
+            menus
+                .map { menuItems -> [MenuItem] in
+                    return menuItems.filter { $0.name.contains(searchText) }
+                }
+                .subscribe(onNext: { [weak self] filteredMenus in
+                    self?.allMenus.onNext(filteredMenus)
+                })
+                .disposed(by: disposeBag)
         }
     }
-    
 }

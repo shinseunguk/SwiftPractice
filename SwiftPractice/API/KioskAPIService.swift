@@ -24,7 +24,7 @@ class KioskAPIService {
                 .responseDecodable(of: response.self) { response in
                     switch response.result {
                     case .success(let menu):
-                        dump(menu.menus)
+//                        dump(menu.menus)
                         observer.onNext(menu.menus)
                         observer.onCompleted()
                     case .failure(let error):
