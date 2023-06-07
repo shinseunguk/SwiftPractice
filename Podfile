@@ -17,7 +17,7 @@ target 'SwiftPractice' do
   
   # 기타 라이브러리 https://haningya.tistory.com/33
   
-  pod 'Atributika' # Swift 언어로 작성된 iOS 및 macOS 앱에서 텍스트 스타일링 및 강조 효과를 적용하는 데 사용되는 라이브러리
+  pod 'Atributika', '4.10.1' # Swift 언어로 작성된 iOS 및 macOS 앱에서 텍스트 스타일링 및 강조 효과를 적용하는 데 사용되는 라이브러리
   pod 'CryptoSwift' # Swfit 로 작성된 cryptographic algorithms들을 모아둔 라이브러리
 
   target 'SwiftPracticeTests' do

@@ -180,16 +180,6 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
             }
             .disposed(by: disposeBag)
         
-        clearButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.clearAction()
-            }, onError: {
-                tLog("Error \($0)")
-            }, onCompleted: {
-                tLog("onCompleted")
-            })
-            .disposed(by: disposeBag)
-        
         viewModel.totalSelectedCountText
             .map { "\($0) items" }
             .bind(to: itemCountLabel.rx.text)
@@ -199,6 +189,11 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
             .map { "₩\(String($0))" }
             .bind(to: totalPriceLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        clearButton.rx.tap
+            .bind(to: viewModel.clearMenus)
+            .disposed(by: disposeBag)
+        
     }
 }
 

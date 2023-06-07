@@ -22,7 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Atributika
+  - Atributika (= 4.10.1)
   - CryptoSwift
   - Realm
   - RxCocoa
@@ -59,6 +59,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 7cc5920a85c547aff77ed42bf845c395d250a9b0
+PODFILE CHECKSUM: e021ca589af2356ddd25756535f37ee81457bd3c
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.11.3

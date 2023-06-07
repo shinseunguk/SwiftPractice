@@ -11,13 +11,13 @@ import RxSwift
 import RxCocoa
 
 final class KioskTableViewCell: UITableViewCell, ViewAttribute {
-    var disposeBag = DisposeBag()
-    let viewModel = KioskViewModel()
+    private let cellDisposeBag = DisposeBag()
     
+    var disposeBag = DisposeBag()
     let onCountChanged : (Int) -> (Void)
     
-    let onData = PublishSubject<ViewMenu>()
-    let onChanged : Observable<Int>
+    let onData: AnyObserver<ViewMenu>
+    let onChanged: Observable<Int>
     
     let plusButton = UIButton().then {
         $0.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -48,13 +48,22 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        let data = PublishSubject<ViewMenu>()
         let changing = PublishSubject<Int>()
         onCountChanged = { changing.onNext($0) }
-        
         onChanged = changing
         
+        onData = data.asObserver()
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        data.observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] menu in
+                self?.titleLabel.text = menu.name
+                self?.priceLabel.text = "\(menu.price)"
+                self?.countLabel.text = "\(menu.count)"
+            })
+            .disposed(by: cellDisposeBag)
         
         setUI()
         setAttributes()
@@ -64,6 +73,7 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.selectionStyle = .none
+        disposeBag = DisposeBag()
     }
     
     required init?(coder: NSCoder) {
@@ -108,31 +118,18 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
     }
     
     func bindRx() {
-        onData
-            .subscribe(onNext: { [weak self] menu in
-                self?.titleLabel.text = menu.name
-                self?.priceLabel.text = String(menu.price)
-                self?.countLabel.text = "(\(String(menu.count)))"
-            }, onError: {
-                print("error \($0)")
-            }, onCompleted: {
-                print("onCompleted")
-            })
-            .disposed(by: disposeBag)
-        
         plusButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 self.onCountChanged(1)
             })
-            .disposed(by: disposeBag)
+            .disposed(by: cellDisposeBag)
 
         minusButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                tLog("")
                 guard let self = self else { return }
                 self.onCountChanged(-1)
             })
-            .disposed(by: disposeBag)
+            .disposed(by: cellDisposeBag)
     }
 }

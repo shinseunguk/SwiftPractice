@@ -14,6 +14,8 @@ final class KioskViewModel {
     let disposeBag = DisposeBag()
     
     let fetchMenus : AnyObserver<Void>
+    let clearMenus : AnyObserver<Void>
+    
     let totalSelectedCountText = BehaviorSubject<Int>(value: 0)
     let totalPriceText = BehaviorSubject<Int>(value: 0)
     let allMenus = BehaviorSubject<[ViewMenu]>(value: [])
@@ -23,41 +25,30 @@ final class KioskViewModel {
     
     init(api: KioskAPIService = KioskAPIService()) {
         let fetching = PublishSubject<Void>()
+        let clearing = PublishSubject<Void>()
         
         fetchMenus = fetching.asObserver()
-        
         fetching
             .flatMap(api.getUsers)
             .map { $0.map { ViewMenu($0) }}
-            .subscribe(onNext: {
-                self.allMenus.onNext($0)
-            },onError: {
-                tLog("onError \($0)")
-            },onCompleted: {
-                tLog("onCompleted")
-            })
+            .subscribe(onNext: allMenus.onNext)
             .disposed(by: disposeBag)
+        
+        clearMenus = clearing.asObserver()
+        clearing.withLatestFrom(allMenus)
+            .map { $0.map { $0.countUpdated(0) } }
+            .subscribe(onNext: allMenus.onNext)
+            .disposed(by: disposeBag)
+        
         
         allMenus
             .map { $0.map{ $0.count }.reduce(0, +) }
-            .subscribe(onNext: { [weak self] in
-                self?.totalSelectedCountText.onNext($0)
-            }, onError: {
-                print("onError \($0)")
-            }, onCompleted: {
-                print("onCompleted")
-            })
+            .subscribe(onNext: totalSelectedCountText.onNext)
             .disposed(by: disposeBag)
         
         allMenus
             .map { $0.map { $0.count * $0.price }.reduce(0, +) }
-            .subscribe(onNext: { [weak self] in
-                self?.totalPriceText.onNext($0)
-            }, onError: {
-                print("onError \($0)")
-            }, onCompleted: {
-                print("onCompleted")
-            })
+            .subscribe(onNext: totalPriceText.onNext)
             .disposed(by: disposeBag)
         
         incleasing.map { $0.menu.countUpdated(max(0, $0.menu.count + $0.inc)) }
@@ -68,16 +59,6 @@ final class KioskViewModel {
                 }
             }
             .subscribe(onNext: allMenus.onNext)
-            .disposed(by: disposeBag)
-    }
-    
-    
-    func clearAction() {
-        allMenus
-            .map { $0.map { $0.countUpdated(0) } }
-            .subscribe(onNext: { [weak self] in
-                
-            })
             .disposed(by: disposeBag)
         
     }
