@@ -41,6 +41,15 @@
 		AC09B9352A273141002B0A47 /* FoundationExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09B9342A273141002B0A47 /* FoundationExampleViewController.swift */; };
 		AC09B9362A273141002B0A47 /* FoundationExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09B9342A273141002B0A47 /* FoundationExampleViewController.swift */; };
 		AC09B9372A273141002B0A47 /* FoundationExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09B9342A273141002B0A47 /* FoundationExampleViewController.swift */; };
+		AC32EAE42A31560B00BA2359 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAE32A31560B00BA2359 /* Extension+UIViewController.swift */; };
+		AC32EAE52A31560B00BA2359 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAE32A31560B00BA2359 /* Extension+UIViewController.swift */; };
+		AC32EAE62A31560B00BA2359 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAE32A31560B00BA2359 /* Extension+UIViewController.swift */; };
+		AC32EAE82A31608A00BA2359 /* Kiosk2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAE72A31608A00BA2359 /* Kiosk2ViewController.swift */; };
+		AC32EAE92A31608A00BA2359 /* Kiosk2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAE72A31608A00BA2359 /* Kiosk2ViewController.swift */; };
+		AC32EAEA2A31608A00BA2359 /* Kiosk2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAE72A31608A00BA2359 /* Kiosk2ViewController.swift */; };
+		AC32EAEC2A31942D00BA2359 /* Kiosk2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAEB2A31942D00BA2359 /* Kiosk2ViewModel.swift */; };
+		AC32EAED2A31942D00BA2359 /* Kiosk2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAEB2A31942D00BA2359 /* Kiosk2ViewModel.swift */; };
+		AC32EAEE2A31942D00BA2359 /* Kiosk2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC32EAEB2A31942D00BA2359 /* Kiosk2ViewModel.swift */; };
 		AC3516772A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */; };
 		AC3516782A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */; };
 		AC3516792A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */; };
@@ -145,6 +154,9 @@
 		AC09B92C2A26EACC002B0A47 /* ViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMenu.swift; sourceTree = "<group>"; };
 		AC09B9302A2714C2002B0A47 /* Extension+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Int.swift"; sourceTree = "<group>"; };
 		AC09B9342A273141002B0A47 /* FoundationExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExampleViewController.swift; sourceTree = "<group>"; };
+		AC32EAE32A31560B00BA2359 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		AC32EAE72A31608A00BA2359 /* Kiosk2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kiosk2ViewController.swift; sourceTree = "<group>"; };
+		AC32EAEB2A31942D00BA2359 /* Kiosk2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kiosk2ViewModel.swift; sourceTree = "<group>"; };
 		AC3516762A1742AB00CBD8C8 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
 		AC35167A2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDeleteCellViewController.swift; sourceTree = "<group>"; };
 		AC58EEAE2A1EE4F3007D52E5 /* AtributikaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributikaViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +273,7 @@
 			children = (
 				A242E0682A164D1D0010BED8 /* Extension+UIView.swift */,
 				AC09B9302A2714C2002B0A47 /* Extension+Int.swift */,
+				AC32EAE32A31560B00BA2359 /* Extension+UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -386,6 +399,7 @@
 			children = (
 				AC9774902A2054B600533E4F /* LoginViewModel.swift */,
 				AC9774942A20A46800533E4F /* KioskViewModel.swift */,
+				AC32EAEB2A31942D00BA2359 /* Kiosk2ViewModel.swift */,
 				AC5B4CE32A2828CA000696C9 /* SearchBarViewModel.swift */,
 			);
 			path = "Library(RxSwift)";
@@ -397,6 +411,7 @@
 				A242E06A2A23A3290010BED8 /* TableViewCell */,
 				AC97748C2A2054AA00533E4F /* LoginViewController.swift */,
 				AC9774982A20A47000533E4F /* KioskViewController.swift */,
+				AC32EAE72A31608A00BA2359 /* Kiosk2ViewController.swift */,
 				AC09B9342A273141002B0A47 /* FoundationExampleViewController.swift */,
 				AC5B4CDF2A2822D2000696C9 /* SearchBarViewController.swift */,
 			);
@@ -724,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC32EAE42A31560B00BA2359 /* Extension+UIViewController.swift in Sources */,
 				A2C42BF42A0E417E008A5865 /* LogHelper.swift in Sources */,
 				AC09B92D2A26EACC002B0A47 /* ViewMenu.swift in Sources */,
 				A2C42BC62A0E4125008A5865 /* IndexViewController.swift in Sources */,
@@ -732,6 +748,7 @@
 				A242E05C2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				AC9774952A20A46800533E4F /* KioskViewModel.swift in Sources */,
 				AC58EEBC2A1F1644007D52E5 /* CryptoViewModel.swift in Sources */,
+				AC32EAEC2A31942D00BA2359 /* Kiosk2ViewModel.swift in Sources */,
 				A2C42BC22A0E4125008A5865 /* AppDelegate.swift in Sources */,
 				AC5B4CE42A2828CA000696C9 /* SearchBarViewModel.swift in Sources */,
 				ACBB15922A1B1B52004B71CF /* ExampleViewController.swift in Sources */,
@@ -751,6 +768,7 @@
 				ACBB15A72A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				A2C42BF92A0E419A008A5865 /* Protocol.swift in Sources */,
 				ACD197272A25D9D5008956C8 /* KioskAPIService.swift in Sources */,
+				AC32EAE82A31608A00BA2359 /* Kiosk2ViewController.swift in Sources */,
 				AC5B4CE02A2822D2000696C9 /* SearchBarViewController.swift in Sources */,
 				ACBB159C2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 				AC58EEB32A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
@@ -762,14 +780,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC32EAE92A31608A00BA2359 /* Kiosk2ViewController.swift in Sources */,
 				AC35167C2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
 				AC3516782A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,
 				A2C42BF52A0E417E008A5865 /* LogHelper.swift in Sources */,
 				ACBB15A82A1B4D5B004B71CF /* HotspotConfigurationViewController.swift in Sources */,
 				AC5B4CE12A2822D2000696C9 /* SearchBarViewController.swift in Sources */,
 				AC97749A2A20A47000533E4F /* KioskViewController.swift in Sources */,
+				AC32EAED2A31942D00BA2359 /* Kiosk2ViewModel.swift in Sources */,
 				A2C42BD92A0E4126008A5865 /* SwtiftPracticeTests.swift in Sources */,
 				ACD197282A25D9D5008956C8 /* KioskAPIService.swift in Sources */,
+				AC32EAE52A31560B00BA2359 /* Extension+UIViewController.swift in Sources */,
 				A242E05D2A0E4DC90010BED8 /* TitleTableViewCell.swift in Sources */,
 				AC09B9362A273141002B0A47 /* FoundationExampleViewController.swift in Sources */,
 				ACBB15AC2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
@@ -803,10 +824,13 @@
 				A242E0662A150A420010BED8 /* ScrollHideViewController.swift in Sources */,
 				ACBB15902A1B0826004B71CF /* AppleLoginViewController.swift in Sources */,
 				AC5B4CE62A2828CA000696C9 /* SearchBarViewModel.swift in Sources */,
+				AC32EAEA2A31608A00BA2359 /* Kiosk2ViewController.swift in Sources */,
 				ACBB15AD2A1B51B2004B71CF /* HotspotConfigurationViewModel.swift in Sources */,
 				AC35167D2A174D2A00CBD8C8 /* SwipeToDeleteCellViewController.swift in Sources */,
 				AC58EEB52A1EF64D007D52E5 /* CryptoViewController.swift in Sources */,
+				AC32EAE62A31560B00BA2359 /* Extension+UIViewController.swift in Sources */,
 				A2C42BE52A0E4126008A5865 /* SwtiftPracticeUITestsLaunchTests.swift in Sources */,
+				AC32EAEE2A31942D00BA2359 /* Kiosk2ViewModel.swift in Sources */,
 				ACBB159E2A1B1F74004B71CF /* AppleLoginViewModel.swift in Sources */,
 				AC9774932A2054B600533E4F /* LoginViewModel.swift in Sources */,
 				AC3516792A1742AB00CBD8C8 /* DynamicHeightTableView.swift in Sources */,

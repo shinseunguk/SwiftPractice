@@ -15,10 +15,14 @@ final class KioskViewModel {
     
     let fetchMenus : AnyObserver<Void>
     let clearMenus : AnyObserver<Void>
+    let orderMenus : AnyObserver<Void>
     
+    
+    let errorMessage: Observable<NSError>
     let totalSelectedCountText = BehaviorSubject<Int>(value: 0)
     let totalPriceText = BehaviorSubject<Int>(value: 0)
     let allMenus = BehaviorSubject<[ViewMenu]>(value: [])
+    let showOrderPage: Observable<[ViewMenu]>
     
     let incleasing = PublishSubject<(menu: ViewMenu, inc: Int)>()
     
@@ -26,6 +30,11 @@ final class KioskViewModel {
     init(api: KioskAPIService = KioskAPIService()) {
         let fetching = PublishSubject<Void>()
         let clearing = PublishSubject<Void>()
+        let ordering = PublishSubject<Void>()
+        
+        let error = PublishSubject<Error>()
+        
+        errorMessage = error.map { $0 as NSError }
         
         fetchMenus = fetching.asObserver()
         fetching
@@ -39,6 +48,18 @@ final class KioskViewModel {
             .map { $0.map { $0.countUpdated(0) } }
             .subscribe(onNext: allMenus.onNext)
             .disposed(by: disposeBag)
+        
+        orderMenus = ordering.asObserver()
+        
+        showOrderPage = ordering.withLatestFrom(allMenus)
+            .map { $0.filter { $0.count > 0 } }
+            .do(onNext: { items in
+                if items.count == 0 {
+                    let err = NSError(domain: "No Orders", code: -1, userInfo: nil)
+                    error.onNext(err)
+                }
+            })
+            .filter { $0.count > 0 }
         
         
         allMenus

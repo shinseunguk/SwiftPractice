@@ -166,6 +166,14 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
             .bind(to: viewModel.fetchMenus)
             .disposed(by: disposeBag)
         
+        // 에러 처리
+        viewModel.errorMessage
+            .map { $0.domain }
+            .subscribe(onNext: { [weak self] message in
+                self?.showAlert("Order Fail", message)
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.allMenus
             .bind(to: tableView.rx.items(cellIdentifier: "KioskTableViewCell", cellType: KioskTableViewCell.self)) { index, item, cell in
                 cell.onData.onNext(item)
@@ -186,7 +194,7 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
             .disposed(by: disposeBag)
         
         viewModel.totalPriceText
-            .map { "₩\(String($0))" }
+            .map { $0.currencyKR() }
             .bind(to: totalPriceLabel.rx.text)
             .disposed(by: disposeBag)
         
@@ -194,6 +202,20 @@ final class KioskViewController: UIViewController, UIViewControllerAttribute {
             .bind(to: viewModel.clearMenus)
             .disposed(by: disposeBag)
         
+        orderButton.rx.tap
+            .bind(to: viewModel.orderMenus)
+            .disposed(by: disposeBag)
+        
+        // 페이지 이동
+        viewModel.showOrderPage
+            .subscribe(onNext: { [weak self] selectedMenus in
+                let VC = Kiosk2ViewController()
+                
+                VC.navTitle = "aa"
+                VC.viewMenu = selectedMenus
+                self?.navigationController?.pushViewController(VC, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

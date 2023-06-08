@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ExampleViewController: UIViewController, UIViewControllerAttribute {
     
