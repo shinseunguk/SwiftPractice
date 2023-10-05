@@ -81,6 +81,8 @@ final class KioskTableViewCell: UITableViewCell, ViewAttribute {
     }
     
     func setUI() {
+        self.contentView.isSkeletonable = true
+        
         self.contentView.addSubview(plusButton)
         self.contentView.addSubview(minusButton)
         self.contentView.addSubview(titleLabel)

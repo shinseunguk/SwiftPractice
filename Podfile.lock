@@ -17,6 +17,7 @@ PODS:
   - RxViewController (2.0.0):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
   - Then (3.0.0)
 
@@ -24,11 +25,12 @@ DEPENDENCIES:
   - Alamofire
   - Atributika (= 4.10.1)
   - CryptoSwift
-  - Realm
+  - Realm (= 10.40.0)
   - RxCocoa
   - RxOptional
   - RxSwift
   - RxViewController
+  - SkeletonView
   - SnapKit
   - Then
 
@@ -43,6 +45,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxViewController
+    - SkeletonView
     - SnapKit
     - Then
 
@@ -56,9 +59,10 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: e021ca589af2356ddd25756535f37ee81457bd3c
+PODFILE CHECKSUM: f7dfbf8a834a90150e9ad097ec3d98896047541a
 
 COCOAPODS: 1.11.3

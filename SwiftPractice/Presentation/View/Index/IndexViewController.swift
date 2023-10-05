@@ -8,6 +8,7 @@
 import UIKit
 import Then
 import SnapKit
+import LocalAuthentication
 
 final class IndexViewController: UIViewController, UIViewControllerAttribute {
     
@@ -21,7 +22,8 @@ final class IndexViewController: UIViewController, UIViewControllerAttribute {
         "UITableView",
         "Signing & Capabilities",
         "Library",
-        "RxSwift"
+        "RxSwift",
+        "LocalAuthentication"
     ]
     
     // 각 섹션의 데이터 배열
@@ -38,14 +40,18 @@ final class IndexViewController: UIViewController, UIViewControllerAttribute {
         ], // Signing & Capabilities
         [
             "Atributika",
-            "CryptoSwift"
+            "CryptoSwift",
+            "SkeletonView"
         ], // Library
         [
             "MVVM+RxSwift 로그인 예제",
             "MVVM+RxSwift 키오스크(곰튀김)",
             "RxSwift 기초 예제",
             "UISearchBar를 이용한 예제"
-        ] // Library(RxSwift)
+        ], // Library(RxSwift)
+        [
+            "Touch ID & Face ID"
+        ] // LocalAuthentication
     ]
     
     lazy var tableView = UITableView().then {
@@ -67,7 +73,7 @@ final class IndexViewController: UIViewController, UIViewControllerAttribute {
     
     /// 네비게이션바 Set
     func setNavigationBar() {
-        self.navigationItem.title = "SwiftPractice"
+        self.navigationItem.title = "목차"
     }
     
     
@@ -169,6 +175,11 @@ extension IndexViewController: UITableViewDataSource, UITableViewDelegate {
                 VC.navTitle = sectionData[indexPath.section][indexPath.row]
 
                 self.navigationController?.pushViewController(VC, animated: true)
+            case 2: // SkletonView
+                let VC = SkeletonViewController()
+                VC.navTitle = sectionData[indexPath.section][indexPath.row]
+
+                self.navigationController?.pushViewController(VC, animated: true)
             default:
                 break
             }
@@ -193,6 +204,19 @@ extension IndexViewController: UITableViewDataSource, UITableViewDelegate {
                 self.navigationController?.pushViewController(VC, animated: true)
             case 3: // UISearchBar를 이용한 예제
                 let VC = SearchBarViewController()
+                VC.navTitle = sectionData[indexPath.section][indexPath.row]
+
+                self.navigationController?.pushViewController(VC, animated: true)
+            default:
+                break
+            }
+            
+            
+        case 5 : // LocalAuthentication
+            
+            switch indexPath.row {
+            case 0: // Touch ID & Face ID
+                let VC = LocalAuthenticationViewController()
                 VC.navTitle = sectionData[indexPath.section][indexPath.row]
 
                 self.navigationController?.pushViewController(VC, animated: true)

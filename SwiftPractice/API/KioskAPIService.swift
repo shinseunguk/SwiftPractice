@@ -28,7 +28,6 @@ class KioskAPIService {
                         observer.onNext(menu.menus)
                         observer.onCompleted()
                     case .failure(let error):
-                        tLog("")
                         observer.onError(error)
                     }
                 }
