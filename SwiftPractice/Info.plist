@@ -21,7 +21,7 @@
 			</array>
 		</dict>
 	</dict>
-    <key>NSFaceIDUsageDescription</key>
-    <string>이 어플리케이션은 사용자를 안전하게 인증하고 개인화된 기능에 액세스하기 위해 Face ID를 사용합니다.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>이 어플리케이션은 사용자를 안전하게 인증하고 개인화된 기능에 액세스하기 위해 Face ID를 사용합니다.</string>
 </dict>
 </plist>
